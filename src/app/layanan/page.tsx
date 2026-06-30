@@ -1,21 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { SERVICES, SITE_CONFIG } from "@/lib/constants";
+import { ALL_SERVICES, SERVICE_CATEGORIES, SEO_SERVICE, SITE_CONFIG } from "@/lib/constants";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Layanan Jasa Website & Digital Marketing Bandung",
+  title: "Layanan - Jasa Website, Aplikasi, Software & Digital Marketing Bandung",
   description:
-    "Layanan lengkap jasa pembuatan website, web design, SEO, dan digital marketing di Bandung. Mulai dari website UMKM hingga enterprise.",
+    "Layanan lengkap jasa pembuatan website, aplikasi mobile, web application, enterprise software, custom software, AI automation, SEO, dan digital marketing di Bandung.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/layanan`,
-  },
-  openGraph: {
-    title: "Layanan Jasa Website & Digital Marketing Bandung | Nufanas",
-    description:
-      "Layanan lengkap jasa pembuatan website, web design, SEO, dan digital marketing di Bandung.",
-    url: `${SITE_CONFIG.url}/layanan`,
   },
 };
 
@@ -34,43 +28,67 @@ export default function LayananPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <span className="text-sm font-medium text-primary mb-2 block">
-              Layanan Kami
+              Layanan Digital Agency & Software House
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Jasa Pembuatan Website &{" "}
-              <span className="gradient-text">Digital Marketing</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+              Jasa Website, Aplikasi &{" "}
+              <span className="gradient-text">Software Development</span>
             </h1>
-            <p className="text-muted max-w-2xl mx-auto text-lg">
-              Solusi digital lengkap untuk bisnis di Bandung dan Jawa Barat.
-              Dari website hingga SEO, kami membantu bisnis Anda tumbuh online.
+            <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto text-lg">
+              Nufanas menyediakan layanan digital lengkap: website development,
+              mobile app, web application, enterprise software, UI/UX design,
+              SEO, AI automation, dan digital marketing untuk bisnis di Bandung.
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/layanan/${service.slug}`}
-                className="group p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-xl transition-all duration-300"
-              >
-                <h2 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {service.title}
+          {/* Category Sections */}
+          {SERVICE_CATEGORIES.map((category) => {
+            const categoryServices = ALL_SERVICES.filter(
+              (s) => s.category === category.slug
+            );
+            // Add SEO service to seo category
+            const services =
+              category.slug === "seo"
+                ? [SEO_SERVICE, ...categoryServices]
+                : categoryServices;
+
+            if (services.length === 0) return null;
+
+            return (
+              <div key={category.slug} className="mb-16">
+                <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
+                  {category.title}
                 </h2>
-                <p className="text-sm text-muted mb-4 line-clamp-3">
-                  {service.description}
+                <p className="text-slate-600 dark:text-slate-300 mb-6">
+                  {category.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-primary">
-                    {service.price}
-                  </span>
-                  <span className="text-xs text-muted group-hover:text-primary transition-colors">
-                    Selengkapnya →
-                  </span>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/layanan/${service.slug}`}
+                      className="group p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+                    >
+                      <h3 className="font-semibold mb-1 text-sm group-hover:text-primary transition-colors text-slate-900 dark:text-white">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-primary">
+                          {service.price}
+                        </span>
+                        <span className="text-xs text-slate-400 group-hover:text-primary transition-colors">
+                          →
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

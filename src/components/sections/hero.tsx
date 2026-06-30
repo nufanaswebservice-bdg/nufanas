@@ -31,22 +31,22 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6"
             >
               <Star size={14} className="fill-primary" />
-              <span>Digital Agency #1 di Bandung</span>
+              <span>Digital Agency & Software House #1 di Bandung</span>
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-              Jasa Pembuatan Website{" "}
-              <span className="gradient-text">Profesional</span> untuk Bisnis
-              Anda di{" "}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance text-slate-900 dark:text-white">
+              Jasa Pembuatan{" "}
+              <span className="gradient-text">Website & Aplikasi</span>{" "}
+              Profesional di{" "}
               <span className="gradient-text">Bandung</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-xl mb-8 leading-relaxed">
-              Nufanas membantu bisnis di Bandung dan Jawa Barat membangun
-              kehadiran digital yang kuat. Website premium, SEO-ready, dan
-              performa cepat yang siap ranking di Google.
+              Nufanas membantu bisnis di Bandung membangun website, mobile app,
+              web application, custom software, dan solusi AI. Dari startup
+              hingga enterprise — kami wujudkan produk digital berkualitas tinggi.
             </p>
 
             {/* CTA Buttons */}
@@ -60,7 +60,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 h-14 px-8 rounded-xl border border-slate-300 dark:border-slate-600 font-semibold text-base hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+                className="inline-flex items-center gap-2 h-14 px-8 rounded-xl border border-slate-300 dark:border-slate-600 font-semibold text-base text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
               >
                 <Play size={18} />
                 Lihat Portfolio
@@ -70,8 +70,8 @@ export function HeroSection() {
             {/* Stats */}
             <div className="flex flex-wrap gap-8">
               {[
-                { value: "200+", label: "Project Selesai" },
-                { value: "150+", label: "Client Puas" },
+                { value: "300+", label: "Project Selesai" },
+                { value: "200+", label: "Client Puas" },
                 { value: "5+", label: "Tahun Pengalaman" },
                 { value: "4.9", label: "Rating Google" },
               ].map((stat, i) => (
@@ -97,9 +97,8 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            {/* Floating Cards */}
             <div className="relative w-full aspect-square max-w-lg mx-auto">
-              {/* Main Card */}
+              {/* Main Card - App mockup */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -113,7 +112,9 @@ export function HeroSection() {
                 <div className="space-y-3">
                   <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-3/4" />
                   <div className="h-4 bg-primary/20 rounded w-1/2" />
-                  <div className="h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg" />
+                  <div className="h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
+                    <span className="text-4xl">📱💻</span>
+                  </div>
                   <div className="grid grid-cols-3 gap-2">
                     <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded" />
                     <div className="h-8 bg-primary/20 rounded" />
@@ -122,7 +123,7 @@ export function HeroSection() {
                 </div>
               </motion.div>
 
-              {/* Floating Badge - Performance */}
+              {/* Floating Badge - Mobile App */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -130,16 +131,16 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                    <span className="text-green-600 font-bold text-sm">100</span>
+                    <span className="text-green-600 font-bold text-sm">✓</span>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Performance</p>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">Lighthouse Score</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Mobile App</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">Android & iOS</p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Floating Badge - SEO */}
+              {/* Floating Badge - Enterprise */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -147,11 +148,11 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">#1</span>
+                    <span className="text-primary font-bold text-sm">🏢</span>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Google Ranking</p>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">Page 1</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Enterprise</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">ERP · CRM · HRIS</p>
                   </div>
                 </div>
               </motion.div>
@@ -167,7 +168,7 @@ export function HeroSection() {
           className="mt-20 text-center"
         >
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-            Dipercaya oleh 150+ bisnis di Bandung dan Jawa Barat
+            Dipercaya oleh 200+ bisnis di Bandung dan seluruh Indonesia
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
             {[
@@ -175,8 +176,8 @@ export function HeroSection() {
               "CV Teknologi Nusantara",
               "Klinik Sehat Bandung",
               "Hotel Dago Suites",
-              "Cafe Kopi Nusantara",
-              "Travel Bandung Tour",
+              "RS Borromeus",
+              "Universitas Telkom",
             ].map((company) => (
               <span
                 key={company}

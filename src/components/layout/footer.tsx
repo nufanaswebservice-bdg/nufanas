@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { SITE_CONFIG, NAP, NAVIGATION, SERVICES } from "@/lib/constants";
+import { SITE_CONFIG, NAP, NAVIGATION, SERVICE_CATEGORIES } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,9 +19,9 @@ export function Footer() {
               <span className="font-bold text-xl text-white">Nufanas</span>
             </Link>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              Digital agency profesional di Bandung yang fokus pada pembuatan
-              website, SEO, dan digital marketing untuk membantu bisnis Anda
-              tumbuh secara online.
+              Digital agency dan software house profesional di Bandung. Jasa
+              pembuatan website, aplikasi mobile, web application, enterprise
+              software, AI automation, SEO, dan digital marketing.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
@@ -54,13 +54,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Layanan</h3>
             <ul className="space-y-2.5">
-              {SERVICES.slice(0, 8).map((service) => (
-                <li key={service.slug}>
+              {SERVICE_CATEGORIES.map((cat) => (
+                <li key={cat.slug}>
                   <Link
-                    href={`/layanan/${service.slug}`}
+                    href={`/layanan`}
                     className="text-sm text-slate-400 hover:text-primary transition-colors"
                   >
-                    {service.shortTitle}
+                    {cat.shortTitle}
                   </Link>
                 </li>
               ))}
@@ -135,7 +135,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
             © {currentYear} {SITE_CONFIG.name}. All rights reserved. Digital
-            Agency Bandung, Jawa Barat.
+            Agency & Software House Bandung, Jawa Barat.
           </p>
           <div className="flex items-center gap-4">
             {Object.entries(NAP.socialMedia).map(([platform, url]) => (

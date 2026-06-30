@@ -13,23 +13,27 @@ import {
   Plane,
   Hammer,
   Home,
-  Sofa,
   Factory,
+  Truck,
+  CreditCard,
+  BarChart3,
 } from "lucide-react";
 
 const industries = [
   { icon: <Building size={20} />, name: "Company Profile", slug: "website-company-profile-bandung" },
-  { icon: <ShoppingBag size={20} />, name: "Toko Online", slug: "website-toko-online-bandung" },
-  { icon: <GraduationCap size={20} />, name: "Sekolah", slug: "website-sekolah-bandung" },
-  { icon: <Heart size={20} />, name: "Klinik & RS", slug: "website-klinik-bandung" },
-  { icon: <Coffee size={20} />, name: "Cafe & Restoran", slug: "website-cafe-bandung" },
-  { icon: <Hotel size={20} />, name: "Hotel", slug: "website-hotel-bandung" },
-  { icon: <Car size={20} />, name: "Rental Mobil", slug: "website-rental-mobil-bandung" },
-  { icon: <Plane size={20} />, name: "Travel & Tour", slug: "website-travel-bandung" },
+  { icon: <ShoppingBag size={20} />, name: "E-Commerce", slug: "website-toko-online-bandung" },
+  { icon: <Heart size={20} />, name: "Klinik & RS", slug: "jasa-aplikasi-klinik-bandung" },
+  { icon: <GraduationCap size={20} />, name: "Sekolah", slug: "jasa-aplikasi-sekolah-bandung" },
+  { icon: <Coffee size={20} />, name: "Cafe & Restoran", slug: "jasa-aplikasi-cafe-bandung" },
+  { icon: <Hotel size={20} />, name: "Hotel", slug: "jasa-aplikasi-hotel-bandung" },
+  { icon: <Car size={20} />, name: "Rental Mobil", slug: "jasa-aplikasi-rental-mobil-bandung" },
+  { icon: <Plane size={20} />, name: "Travel & Tour", slug: "jasa-aplikasi-travel-bandung" },
   { icon: <Hammer size={20} />, name: "Kontraktor", slug: "website-kontraktor-bandung" },
-  { icon: <Home size={20} />, name: "Properti", slug: "website-properti-bandung" },
-  { icon: <Sofa size={20} />, name: "Furniture", slug: "website-furniture-bandung" },
-  { icon: <Factory size={20} />, name: "Industri", slug: "website-industri-bandung" },
+  { icon: <Home size={20} />, name: "Properti", slug: "jasa-aplikasi-properti-bandung" },
+  { icon: <Factory size={20} />, name: "Manufaktur", slug: "website-industri-bandung" },
+  { icon: <Truck size={20} />, name: "Logistik", slug: "jasa-custom-software-bandung" },
+  { icon: <CreditCard size={20} />, name: "POS & Kasir", slug: "jasa-pos-bandung" },
+  { icon: <BarChart3 size={20} />, name: "ERP & CRM", slug: "jasa-erp-bandung" },
 ];
 
 export function IndustriesSection() {
@@ -43,30 +47,30 @@ export function IndustriesSection() {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary mb-2 block">
-            Industri
+            Industri & Solusi
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Website untuk Berbagai{" "}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+            Website & Aplikasi untuk Berbagai{" "}
             <span className="gradient-text">Industri</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Kami berpengalaman membangun website untuk berbagai jenis bisnis di
-            Bandung dan Jawa Barat.
+            Kami berpengalaman membangun website, mobile app, dan enterprise
+            software untuk berbagai industri di Bandung dan seluruh Indonesia.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              transition={{ delay: index * 0.03 }}
             >
               <Link
                 href={`/layanan/${industry.slug}`}
-                className="group flex flex-col items-center gap-3 p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/30 hover:shadow-md transition-all"
+                className="group flex flex-col items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">
                   {industry.icon}

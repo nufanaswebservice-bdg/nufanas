@@ -4,26 +4,40 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Globe,
-  Code,
-  Terminal,
-  Palette,
+  Smartphone,
+  LayoutDashboard,
   Building,
-  ShoppingCart,
-  MousePointer,
+  Code,
+  Palette,
   Search,
+  Brain,
+  Megaphone,
   ArrowRight,
 } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { SERVICE_CATEGORIES } from "@/lib/constants";
 
 const iconMap: Record<string, React.ReactNode> = {
   globe: <Globe size={24} />,
-  code: <Code size={24} />,
-  terminal: <Terminal size={24} />,
-  palette: <Palette size={24} />,
+  smartphone: <Smartphone size={24} />,
+  layoutDashboard: <LayoutDashboard size={24} />,
   building: <Building size={24} />,
-  shoppingCart: <ShoppingCart size={24} />,
-  mousePointer: <MousePointer size={24} />,
+  code: <Code size={24} />,
+  palette: <Palette size={24} />,
   search: <Search size={24} />,
+  brain: <Brain size={24} />,
+  megaphone: <Megaphone size={24} />,
+};
+
+const categoryLinks: Record<string, string> = {
+  "website-development": "/layanan/jasa-website-bandung",
+  "mobile-app-development": "/layanan/jasa-pembuatan-aplikasi-bandung",
+  "web-application": "/layanan/jasa-web-application-bandung",
+  "enterprise-software": "/layanan/jasa-erp-bandung",
+  "custom-software": "/layanan/jasa-custom-software-bandung",
+  "ui-ux-design": "/layanan/web-design-bandung",
+  "seo": "/layanan/jasa-seo-bandung",
+  "ai-automation": "/layanan/jasa-aplikasi-ai-bandung",
+  "digital-marketing": "/layanan",
 };
 
 export function ServicesSection() {
@@ -44,20 +58,20 @@ export function ServicesSection() {
           <span className="text-sm font-medium text-primary mb-2 block">
             Layanan Kami
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
             Solusi Digital Lengkap untuk{" "}
             <span className="gradient-text">Bisnis Anda</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Dari pembuatan website hingga SEO dan digital marketing, kami
-            menyediakan layanan lengkap untuk membantu bisnis Anda tumbuh secara
-            online di Bandung dan seluruh Indonesia.
+            Dari website dan mobile app hingga enterprise software dan AI —
+            kami menyediakan layanan end-to-end untuk transformasi digital bisnis
+            Anda di Bandung.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SERVICES.slice(0, 8).map((service, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICE_CATEGORIES.map((service, index) => (
             <motion.div
               key={service.slug}
               initial={{ opacity: 0, y: 20 }}
@@ -66,16 +80,16 @@ export function ServicesSection() {
               transition={{ delay: index * 0.05 }}
             >
               <Link
-                href={`/layanan/${service.slug}`}
-                className="group block h-full p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                href={categoryLinks[service.slug] || "/layanan"}
+                className="group block h-full p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
                   {iconMap[service.icon] || <Globe size={24} />}
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-white">
-                  {service.shortTitle}
+                  {service.title}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+                <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
                   {service.description}
                 </p>
                 <div className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
