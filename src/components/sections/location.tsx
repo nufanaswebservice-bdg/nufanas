@@ -21,7 +21,7 @@ export function LocationSection() {
             Melayani Bisnis di{" "}
             <span className="gradient-text">Bandung & Sekitarnya</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Kantor kami berlokasi strategis di pusat Kota Bandung. Kami melayani
             bisnis di seluruh Bandung Raya dan Jawa Barat.
           </p>
@@ -33,7 +33,7 @@ export function LocationSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 h-[400px]"
+            className="rounded-2xl overflow-hidden border border-slate-200 h-[400px]"
           >
             <iframe
               src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.1!2d${NAP.geo.longitude}!3d${NAP.geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s!5e0!3m2!1sid!2sid!4v1`}
@@ -59,14 +59,14 @@ export function LocationSection() {
                 <MapPin size={20} className="text-primary" />
                 {NAP.name}
               </h3>
-              <p className="text-slate-600 dark:text-slate-300 mb-2">
+              <p className="text-slate-600 mb-2">
                 {NAP.address.street}
               </p>
-              <p className="text-slate-600 dark:text-slate-300 mb-4">
+              <p className="text-slate-600 mb-4">
                 {NAP.address.city}, {NAP.address.region}{" "}
                 {NAP.address.postalCode}
               </p>
-              <p className="text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-sm text-slate-600">
                 <strong>Jam Operasional:</strong> Senin - Jumat: 09:00 - 18:00
                 WIB | Sabtu: 09:00 - 15:00 WIB
               </p>
@@ -78,7 +78,7 @@ export function LocationSection() {
                 {ENTITIES.areas.map((area) => (
                   <span
                     key={area}
-                    className="text-xs px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className="text-xs px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
                   >
                     {area}
                   </span>

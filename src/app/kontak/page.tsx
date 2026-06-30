@@ -44,7 +44,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <div className="space-y-6 mb-10">
-                <div className="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <MapPin size={20} />
                   </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200">
                   <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 shrink-0">
                     <MessageCircle size={20} />
                   </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <Mail size={20} />
                   </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <Clock size={20} />
                   </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 h-[250px]">
+              <div className="rounded-2xl overflow-hidden border border-slate-200 h-[250px]">
                 <iframe
                   src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.1!2d${NAP.geo.longitude}!3d${NAP.geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s!5e0!3m2!1sid!2sid!4v1`}
                   width="100%"
@@ -124,7 +124,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200">
               <h2 className="text-xl font-bold mb-6">Kirim Pesan</h2>
               <ContactForm />
             </div>

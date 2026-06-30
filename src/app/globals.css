@@ -9,7 +9,7 @@
   --color-accent-foreground: #ffffff;
   --color-muted: #64748b;
   --color-muted-foreground: #94a3b8;
-  --color-background: #ffffff;
+  --color-background: #f8fafc;
   --color-foreground: #0f172a;
   --color-card: #ffffff;
   --color-card-foreground: #0f172a;
@@ -28,12 +28,12 @@
 
 @layer base {
   .dark {
-    --color-background: #0f172a;
-    --color-foreground: #f1f5f9;
-    --color-card: #1e293b;
-    --color-card-foreground: #f1f5f9;
-    --color-border: #334155;
-    --color-muted: #cbd5e1;
+    --color-background: #f8fafc;
+    --color-foreground: #0f172a;
+    --color-card: #ffffff;
+    --color-card-foreground: #0f172a;
+    --color-border: #e2e8f0;
+    --color-muted: #64748b;
     --color-muted-foreground: #94a3b8;
   }
 

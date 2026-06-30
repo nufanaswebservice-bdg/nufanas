@@ -58,7 +58,7 @@ export function ContactForm() {
           id="name"
           type="text"
           placeholder="Masukkan nama Anda"
-          className="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         {errors.name && (
           <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>
@@ -75,7 +75,7 @@ export function ContactForm() {
             id="email"
             type="email"
             placeholder="email@example.com"
-            className="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           />
           {errors.email && (
             <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>
@@ -90,7 +90,7 @@ export function ContactForm() {
             id="phone"
             type="tel"
             placeholder="08xxxxxxxxxx"
-            className="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           />
           {errors.phone && (
             <p className="text-xs text-red-500 mt-1">{errors.phone.message}</p>
@@ -109,7 +109,7 @@ export function ContactForm() {
           <select
             {...register("service")}
             id="service"
-            className="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           >
             <option value="">Pilih layanan</option>
             <option value="Website Company Profile">
@@ -136,7 +136,7 @@ export function ContactForm() {
           <select
             {...register("budget")}
             id="budget"
-            className="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full h-11 px-4 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           >
             <option value="">Pilih range budget</option>
             <option value="< Rp 3 juta">&lt; Rp 3 juta</option>
@@ -158,7 +158,7 @@ export function ContactForm() {
           id="message"
           rows={4}
           placeholder="Ceritakan kebutuhan website Anda..."
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
         />
         {errors.message && (
           <p className="text-xs text-red-500 mt-1">{errors.message.message}</p>
@@ -166,7 +166,7 @@ export function ContactForm() {
       </div>
 
       {isSuccess && (
-        <div className="p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 text-sm">
+        <div className="p-4 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm">
           Pesan berhasil dikirim! Kami akan segera menghubungi Anda.
         </div>
       )}

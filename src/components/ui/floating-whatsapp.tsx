@@ -21,7 +21,7 @@ export function FloatingWhatsApp() {
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            className="mb-4 w-72 rounded-2xl bg-white dark:bg-slate-800 shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+            className="mb-4 w-72 rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden"
           >
             <div className="bg-green-500 p-4 text-white">
               <p className="font-semibold">Nufanas Digital Agency</p>
@@ -30,8 +30,8 @@ export function FloatingWhatsApp() {
               </p>
             </div>
             <div className="p-4">
-              <div className="bg-slate-100 dark:bg-slate-700 rounded-lg p-3 mb-3">
-                <p className="text-sm text-slate-700 dark:text-slate-300">
+              <div className="bg-slate-100 rounded-lg p-3 mb-3">
+                <p className="text-sm text-slate-700">
                   Halo! 👋 Ada yang bisa kami bantu? Konsultasi website gratis!
                 </p>
               </div>

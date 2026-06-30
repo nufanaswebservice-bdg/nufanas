@@ -106,21 +106,21 @@ export default async function ServicePage({ params }: Props) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+            <ol className="flex items-center gap-2 text-sm text-slate-500">
               <li><Link href="/" className="hover:text-primary">Beranda</Link></li>
               <li>/</li>
               <li><Link href="/layanan" className="hover:text-primary">Layanan</Link></li>
               <li>/</li>
-              <li className="text-slate-900 dark:text-white font-medium">{service.shortTitle}</li>
+              <li className="text-slate-900 font-medium">{service.shortTitle}</li>
             </ol>
           </nav>
 
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
               {service.title}
             </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               {service.description}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -137,7 +137,7 @@ export default async function ServicePage({ params }: Props) {
                 href={`https://wa.me/6282216667733?text=${encodeURIComponent(`Halo Nufanas, saya tertarik dengan ${service.title}. Bisa konsultasi?`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-green-500 text-green-600 dark:text-green-400 font-medium hover:bg-green-50 dark:hover:bg-green-900/20 transition-all"
+                className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-green-500 text-green-600 font-medium hover:bg-green-50:bg-green-900/20 transition-all"
               >
                 WhatsApp
               </a>
@@ -145,9 +145,9 @@ export default async function ServicePage({ params }: Props) {
           </header>
 
           {/* Key Takeaways */}
-          <section className="mb-12 p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
-            <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">📋 Ringkasan Layanan</h2>
-            <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <section className="mb-12 p-6 rounded-2xl bg-primary/5 border border-primary/20">
+            <h2 className="text-lg font-bold mb-3 text-slate-900">📋 Ringkasan Layanan</h2>
+            <ul className="space-y-2 text-sm text-slate-700">
               <li>✅ {isAppService ? "Aplikasi native & cross-platform berkualitas tinggi" : "Desain premium, responsive, dan mobile-first"}</li>
               <li>✅ {isAppService ? "UI/UX design khusus sesuai brand Anda" : "SEO on-page terintegrasi dari awal"}</li>
               <li>✅ {isAppService ? "Backend scalable & secure" : "Performa cepat dengan skor Lighthouse tinggi"}</li>
@@ -158,7 +158,7 @@ export default async function ServicePage({ params }: Props) {
           </section>
 
           {/* Main Content */}
-          <section className="prose prose-slate dark:prose-invert max-w-none mb-12">
+          <section className="prose prose-slate max-w-none mb-12">
             <h2>Mengapa Memilih {service.title}?</h2>
             <p>
               Di era digital saat ini, memiliki {isAppService ? "aplikasi" : "website"} yang profesional bukan lagi
@@ -242,17 +242,17 @@ export default async function ServicePage({ params }: Props) {
 
           {/* FAQ */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-6 text-slate-900">
               FAQ — {service.title}
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+                  className="p-5 rounded-xl bg-white border border-slate-200"
                 >
-                  <h3 className="font-semibold mb-2 text-slate-900 dark:text-white">{faq.question}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <h3 className="font-semibold mb-2 text-slate-900">{faq.question}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -279,16 +279,16 @@ export default async function ServicePage({ params }: Props) {
           {/* Related Services */}
           {relatedServices.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Layanan Terkait</h2>
+              <h2 className="text-2xl font-bold mb-6 text-slate-900">Layanan Terkait</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {relatedServices.map((related) => (
                   <Link
                     key={related.slug}
                     href={`/layanan/${related.slug}`}
-                    className="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/30 transition-all"
+                    className="p-5 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all"
                   >
-                    <h3 className="font-semibold mb-1 text-sm text-slate-900 dark:text-white">{related.title}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{related.description}</p>
+                    <h3 className="font-semibold mb-1 text-sm text-slate-900">{related.title}</h3>
+                    <p className="text-xs text-slate-500 line-clamp-2">{related.description}</p>
                   </Link>
                 ))}
               </div>
@@ -297,16 +297,16 @@ export default async function ServicePage({ params }: Props) {
 
           {/* Other Services */}
           <section>
-            <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Layanan Lainnya</h2>
+            <h2 className="text-2xl font-bold mb-6 text-slate-900">Layanan Lainnya</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {otherServices.map((other) => (
                 <Link
                   key={other.slug}
                   href={`/layanan/${other.slug}`}
-                  className="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/30 transition-all"
+                  className="p-5 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all"
                 >
-                  <h3 className="font-semibold mb-1 text-sm text-slate-900 dark:text-white">{other.title}</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{other.description}</p>
+                  <h3 className="font-semibold mb-1 text-sm text-slate-900">{other.title}</h3>
+                  <p className="text-xs text-slate-500 line-clamp-2">{other.description}</p>
                 </Link>
               ))}
             </div>

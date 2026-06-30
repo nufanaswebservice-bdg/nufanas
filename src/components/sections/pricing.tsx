@@ -86,7 +86,7 @@ export function PricingSection() {
             Paket Harga{" "}
             <span className="gradient-text">Jasa Website Bandung</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Harga terjangkau dengan kualitas premium. Semua paket sudah termasuk
             domain, hosting, SSL, dan SEO dasar.
           </p>
@@ -102,8 +102,8 @@ export function PricingSection() {
               transition={{ delay: index * 0.1 }}
               className={`relative p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "bg-white dark:bg-slate-800 border-primary shadow-lg scale-[1.02]"
-                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-primary/30"
+                  ? "bg-white border-primary shadow-lg scale-[1.02]"
+                  : "bg-white border-slate-200 hover:border-primary/30"
               }`}
             >
               {plan.popular && (
@@ -113,13 +113,13 @@ export function PricingSection() {
                 </div>
               )}
 
-              <h3 className="text-xl font-bold mb-1 text-slate-900 dark:text-white">{plan.name}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{plan.description}</p>
+              <h3 className="text-xl font-bold mb-1 text-slate-900">{plan.name}</h3>
+              <p className="text-sm text-slate-600 mb-4">{plan.description}</p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-sm text-slate-500 dark:text-slate-400">Rp</span>
-                <span className="text-4xl font-bold text-slate-900 dark:text-white">{plan.price}</span>
-                <span className="text-slate-500 dark:text-slate-400">/{plan.period}</span>
+                <span className="text-sm text-slate-500">Rp</span>
+                <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
+                <span className="text-slate-500">/{plan.period}</span>
               </div>
 
               <Link
@@ -127,7 +127,7 @@ export function PricingSection() {
                 className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
                   plan.popular
                     ? "gradient-primary text-white hover:shadow-lg"
-                    : "border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white hover:border-primary hover:text-primary"
+                    : "border border-slate-300 text-slate-900 hover:border-primary hover:text-primary"
                 }`}
               >
                 {plan.cta}
@@ -140,7 +140,7 @@ export function PricingSection() {
                       size={16}
                       className="text-green-500 mt-0.5 shrink-0"
                     />
-                    <span className="text-sm text-slate-600 dark:text-slate-300">{feature}</span>
+                    <span className="text-sm text-slate-600">{feature}</span>
                   </li>
                 ))}
               </ul>

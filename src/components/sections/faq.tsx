@@ -63,7 +63,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50" id="faq">
+    <section className="py-24 bg-slate-50" id="faq">
       <JsonLd data={generateFAQSchema(faqs)} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -79,7 +79,7 @@ export function FAQSection() {
             Pertanyaan yang Sering{" "}
             <span className="gradient-text">Ditanyakan</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300">
+          <p className="text-slate-600">
             Temukan jawaban untuk pertanyaan umum tentang jasa pembuatan website
             di Bandung.
           </p>
@@ -93,7 +93,7 @@ export function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 overflow-hidden"
+              className="rounded-xl bg-white border border-slate-200 overflow-hidden"
             >
               <button
                 onClick={() =>
@@ -102,7 +102,7 @@ export function FAQSection() {
                 className="w-full flex items-center justify-between p-5 text-left"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-medium text-sm pr-4 text-slate-900 dark:text-white">
+                <span className="font-medium text-sm pr-4 text-slate-900">
                   {faq.question}
                 </span>
                 {openIndex === index ? (
@@ -119,7 +119,7 @@ export function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="px-5 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <div className="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

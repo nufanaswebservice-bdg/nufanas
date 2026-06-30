@@ -95,7 +95,7 @@ export default function PortfolioPage() {
             {portfolioItems.map((item) => (
               <div
                 key={item.title}
-                className="group p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/30 hover:shadow-xl transition-all"
+                className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-xl transition-all"
               >
                 {/* Placeholder for screenshot */}
                 <div className="w-full aspect-video rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 mb-5 flex items-center justify-center">
@@ -118,7 +118,7 @@ export default function PortfolioPage() {
                   {item.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-muted"
+                      className="text-xs px-2 py-0.5 bg-slate-100 rounded text-muted"
                     >
                       {t}
                     </span>
@@ -126,8 +126,8 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Result */}
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
-                  <p className="text-xs text-green-600 dark:text-green-400 font-medium">
+                <div className="pt-4 border-t border-slate-100">
+                  <p className="text-xs text-green-600 font-medium">
                     📈 {item.result}
                   </p>
                 </div>

@@ -50,7 +50,7 @@ export default function AboutPage() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="text-center p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
+                className="text-center p-6 rounded-2xl bg-white border border-slate-200"
               >
                 <p className="text-3xl font-bold gradient-text">{stat.value}</p>
                 <p className="text-sm text-muted mt-1">{stat.label}</p>
@@ -88,7 +88,7 @@ export default function AboutPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
+                className="p-6 rounded-2xl bg-white border border-slate-200"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                   {item.icon}
@@ -102,7 +102,7 @@ export default function AboutPage() {
           </div>
 
           {/* Story */}
-          <div className="prose prose-slate dark:prose-invert max-w-none">
+          <div className="prose prose-slate max-w-none">
             <h2>Cerita Kami</h2>
             <p>
               Nufanas didirikan pada tahun 2019 di Bandung dengan satu tujuan

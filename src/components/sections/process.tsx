@@ -36,7 +36,7 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export function ProcessSection() {
             Bagaimana Kami{" "}
             <span className="gradient-text">Bekerja</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Proses yang transparan dan terstruktur untuk memastikan website Anda
             selesai tepat waktu dengan kualitas terbaik.
           </p>
@@ -72,14 +72,14 @@ export function ProcessSection() {
                 <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-primary/30 to-primary/10" />
               )}
 
-              <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm mb-6">
+              <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white border border-slate-200 shadow-sm mb-6">
                 <div className="text-primary">{step.icon}</div>
                 <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full gradient-primary text-white text-xs font-bold flex items-center justify-center">
                   {step.step}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{step.title}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="text-lg font-semibold mb-2 text-slate-900">{step.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

@@ -30,11 +30,11 @@ export default function LayananPage() {
             <span className="text-sm font-medium text-primary mb-2 block">
               Layanan Digital Agency & Software House
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
               Jasa Website, Aplikasi &{" "}
               <span className="gradient-text">Software Development</span>
             </h1>
-            <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto text-lg">
+            <p className="text-slate-600 max-w-3xl mx-auto text-lg">
               Nufanas menyediakan layanan digital lengkap: website development,
               mobile app, web application, enterprise software, UI/UX design,
               SEO, AI automation, dan digital marketing untuk bisnis di Bandung.
@@ -56,10 +56,10 @@ export default function LayananPage() {
 
             return (
               <div key={category.slug} className="mb-16">
-                <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
+                <h2 className="text-2xl font-bold mb-2 text-slate-900">
                   {category.title}
                 </h2>
-                <p className="text-slate-600 dark:text-slate-300 mb-6">
+                <p className="text-slate-600 mb-6">
                   {category.description}
                 </p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -67,12 +67,12 @@ export default function LayananPage() {
                     <Link
                       key={service.slug}
                       href={`/layanan/${service.slug}`}
-                      className="group p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+                      className="group p-5 rounded-xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
                     >
-                      <h3 className="font-semibold mb-1 text-sm group-hover:text-primary transition-colors text-slate-900 dark:text-white">
+                      <h3 className="font-semibold mb-1 text-sm group-hover:text-primary transition-colors text-slate-900">
                         {service.title}
                       </h3>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">
+                      <p className="text-xs text-slate-500 mb-3 line-clamp-2">
                         {service.description}
                       </p>
                       <div className="flex items-center justify-between">

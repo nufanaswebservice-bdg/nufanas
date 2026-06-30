@@ -71,7 +71,7 @@ export function TestimonialsSection() {
             Apa Kata{" "}
             <span className="gradient-text">Client Kami</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Lebih dari 150 bisnis di Bandung dan Jawa Barat sudah mempercayakan
             pembuatan website mereka kepada Nufanas.
           </p>
@@ -85,10 +85,10 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all"
+              className="p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition-all"
             >
               <Quote size={20} className="text-primary/30 mb-4" />
-              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              <p className="text-sm text-slate-600 mb-4 leading-relaxed">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
               <div className="flex items-center gap-1 mb-4">
@@ -106,7 +106,7 @@ export function TestimonialsSection() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">{testimonial.name}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs text-slate-500">
                     {testimonial.role} • {testimonial.location}
                   </p>
                 </div>

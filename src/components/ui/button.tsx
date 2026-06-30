@@ -19,7 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               variant === "default",
             "border border-border bg-transparent hover:bg-primary/10 hover:border-primary":
               variant === "outline",
-            "hover:bg-slate-100 dark:hover:bg-slate-800": variant === "ghost",
+            "hover:bg-slate-100:bg-slate-800": variant === "ghost",
             "text-primary underline-offset-4 hover:underline": variant === "link",
             "gradient-primary text-white shadow-lg hover:shadow-xl hover:scale-[1.02]":
               variant === "gradient",

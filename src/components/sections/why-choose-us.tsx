@@ -51,7 +51,7 @@ const reasons = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export function WhyChooseUsSection() {
             Dipercaya untuk Website yang{" "}
             <span className="gradient-text">Serius</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Desain rapi, performa kencang, dan struktur SEO yang terukur untuk
             bisnis di Bandung, Jawa Barat, dan seluruh Indonesia.
           </p>
@@ -80,13 +80,13 @@ export function WhyChooseUsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all">
                 {reason.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{reason.title}</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              <h3 className="text-lg font-semibold mb-2 text-slate-900">{reason.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>

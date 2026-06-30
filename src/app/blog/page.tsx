@@ -102,7 +102,7 @@ export default function BlogPage() {
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group flex flex-col p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+                className="group flex flex-col p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
               >
                 <span className="text-xs font-medium text-primary mb-3 px-2.5 py-1 bg-primary/10 rounded-full w-fit">
                   {article.category}
@@ -113,7 +113,7 @@ export default function BlogPage() {
                 <p className="text-sm text-muted mb-4 line-clamp-3 flex-1">
                   {article.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-xs text-muted mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-4 text-xs text-muted mt-auto pt-4 border-t border-slate-100">
                   <span className="flex items-center gap-1">
                     <Calendar size={12} />
                     {new Date(article.date).toLocaleDateString("id-ID", {
