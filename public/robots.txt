@@ -1,0 +1,24 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# CCBot
+User-agent: CCBot
+Allow: /
+
+# Host
+Host: https://nufanas.com
+
+# Sitemaps
+Sitemap: https://nufanas.com/sitemap.xml
+Sitemap: https://nufanas.com/sitemap-articles.xml
