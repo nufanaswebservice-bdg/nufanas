@@ -7,12 +7,21 @@ import Link from "next/link";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Animated Background */}
+      {/* Video Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-float" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-[128px] animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blob" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/hero-poster.jpg"
+        >
+          <source src="/videos/video1.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/60" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -60,7 +69,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 h-14 px-8 rounded-xl border border-slate-300 font-semibold text-base text-slate-900 hover:bg-slate-50:bg-slate-800 transition-all"
+                className="inline-flex items-center gap-2 h-14 px-8 rounded-xl border border-slate-300 font-semibold text-base text-slate-900 hover:bg-white hover:shadow-md transition-all"
               >
                 <Play size={18} />
                 Lihat Portfolio
@@ -90,73 +99,68 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right Visual */}
+          {/* Right - Video Preview Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              {/* Main Card - App mockup */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-10 left-10 right-10 bg-white rounded-2xl shadow-2xl p-6 border border-slate-200"
+            <div className="relative w-full aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
-                </div>
-                <div className="space-y-3">
-                  <div className="h-4 bg-slate-200 rounded w-3/4" />
-                  <div className="h-4 bg-primary/20 rounded w-1/2" />
-                  <div className="h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl">📱💻</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="h-8 bg-slate-200 rounded" />
-                    <div className="h-8 bg-primary/20 rounded" />
-                    <div className="h-8 bg-slate-200 rounded" />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge - Mobile App */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-4 left-0 bg-white rounded-xl shadow-lg p-4 border border-slate-200"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <span className="text-green-600 font-bold text-sm">✓</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500">Mobile App</p>
-                    <p className="text-sm font-semibold text-slate-900">Android & iOS</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge - Enterprise */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-20 -right-4 bg-white rounded-xl shadow-lg p-4 border border-slate-200"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">🏢</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500">Enterprise</p>
-                    <p className="text-sm font-semibold text-slate-900">ERP · CRM · HRIS</p>
-                  </div>
-                </div>
-              </motion.div>
+                <source src="/videos/video1.mp4" type="video/mp4" />
+              </video>
+              {/* Subtle overlay gradient at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <span className="text-white text-sm font-medium bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">
+                  🎬 Showreel
+                </span>
+                <span className="text-white text-xs bg-primary/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                  Nufanas Studio
+                </span>
+              </div>
             </div>
+
+            {/* Floating Badge */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-slate-200"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                  <span className="text-green-600 font-bold text-sm">✓</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500">Mobile & Web</p>
+                  <p className="text-sm font-semibold text-slate-900">Android · iOS · Web</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating Badge Right */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-slate-200"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary font-bold text-sm">🏢</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500">Enterprise</p>
+                  <p className="text-sm font-semibold text-slate-900">ERP · CRM · HRIS</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
