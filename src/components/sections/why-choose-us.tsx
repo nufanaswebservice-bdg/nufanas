@@ -66,7 +66,7 @@ export function WhyChooseUsSection() {
             Dipercaya untuk Website yang{" "}
             <span className="gradient-text">Serius</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Desain rapi, performa kencang, dan struktur SEO yang terukur untuk
             bisnis di Bandung, Jawa Barat, dan seluruh Indonesia.
           </p>

@@ -84,7 +84,7 @@ export function HeroSection() {
                   <p className="text-2xl font-bold gradient-text">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-muted">{stat.label}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -166,7 +166,7 @@ export function HeroSection() {
           transition={{ delay: 1 }}
           className="mt-20 text-center"
         >
-          <p className="text-sm text-muted mb-6">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
             Dipercaya oleh 150+ bisnis di Bandung dan Jawa Barat
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">

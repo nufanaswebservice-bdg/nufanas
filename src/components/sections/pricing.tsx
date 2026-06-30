@@ -86,7 +86,7 @@ export function PricingSection() {
             Paket Harga{" "}
             <span className="gradient-text">Jasa Website Bandung</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Harga terjangkau dengan kualitas premium. Semua paket sudah termasuk
             domain, hosting, SSL, dan SEO dasar.
           </p>
@@ -102,8 +102,8 @@ export function PricingSection() {
               transition={{ delay: index * 0.1 }}
               className={`relative p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "bg-primary/5 dark:bg-primary/10 border-primary shadow-lg scale-[1.02]"
-                  : "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 hover:border-primary/30"
+                  ? "bg-white dark:bg-slate-800 border-primary shadow-lg scale-[1.02]"
+                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-primary/30"
               }`}
             >
               {plan.popular && (
@@ -127,7 +127,7 @@ export function PricingSection() {
                 className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
                   plan.popular
                     ? "gradient-primary text-white hover:shadow-lg"
-                    : "border border-slate-300 dark:border-slate-600 hover:border-primary hover:text-primary"
+                    : "border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white hover:border-primary hover:text-primary"
                 }`}
               >
                 {plan.cta}

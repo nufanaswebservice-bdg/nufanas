@@ -34,7 +34,7 @@ export function TechnologySection() {
             Teknologi{" "}
             <span className="gradient-text">Modern & Terpercaya</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Kami menggunakan teknologi terkini yang terbukti andal untuk
             membangun website dengan performa tinggi dan maintainability yang
             baik.

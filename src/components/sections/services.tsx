@@ -48,7 +48,7 @@ export function ServicesSection() {
             Solusi Digital Lengkap untuk{" "}
             <span className="gradient-text">Bisnis Anda</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Dari pembuatan website hingga SEO dan digital marketing, kami
             menyediakan layanan lengkap untuk membantu bisnis Anda tumbuh secara
             online di Bandung dan seluruh Indonesia.

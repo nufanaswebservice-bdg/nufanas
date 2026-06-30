@@ -71,7 +71,7 @@ export function TestimonialsSection() {
             Apa Kata{" "}
             <span className="gradient-text">Client Kami</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Lebih dari 150 bisnis di Bandung dan Jawa Barat sudah mempercayakan
             pembuatan website mereka kepada Nufanas.
           </p>
@@ -106,7 +106,7 @@ export function TestimonialsSection() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">{testimonial.name}</p>
-                  <p className="text-xs text-muted">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     {testimonial.role} • {testimonial.location}
                   </p>
                 </div>

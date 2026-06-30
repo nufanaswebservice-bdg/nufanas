@@ -79,7 +79,7 @@ export function FAQSection() {
             Pertanyaan yang Sering{" "}
             <span className="gradient-text">Ditanyakan</span>
           </h2>
-          <p className="text-muted">
+          <p className="text-slate-600 dark:text-slate-300">
             Temukan jawaban untuk pertanyaan umum tentang jasa pembuatan website
             di Bandung.
           </p>
@@ -108,7 +108,7 @@ export function FAQSection() {
                 {openIndex === index ? (
                   <Minus size={18} className="text-primary shrink-0" />
                 ) : (
-                  <Plus size={18} className="text-muted shrink-0" />
+                  <Plus size={18} className="text-slate-400 shrink-0" />
                 )}
               </button>
               <AnimatePresence>

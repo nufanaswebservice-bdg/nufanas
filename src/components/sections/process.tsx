@@ -51,7 +51,7 @@ export function ProcessSection() {
             Bagaimana Kami{" "}
             <span className="gradient-text">Bekerja</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Proses yang transparan dan terstruktur untuk memastikan website Anda
             selesai tepat waktu dengan kualitas terbaik.
           </p>
