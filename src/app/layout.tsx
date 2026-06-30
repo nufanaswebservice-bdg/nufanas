@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
+import { PromoPopup } from "@/components/ui/promo-popup";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   generateOrganizationSchema,
@@ -114,6 +115,7 @@ export default function RootLayout({
           <main className="min-h-screen overflow-x-hidden">{children}</main>
           <Footer />
           <FloatingWhatsApp />
+          <PromoPopup />
         </ThemeProvider>
       </body>
     </html>

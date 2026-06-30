@@ -6,6 +6,26 @@ import Link from "next/link";
 
 const plans = [
   {
+    name: "Promo 🔥",
+    price: "800",
+    period: "ribu",
+    description: "Promo spesial! Website profesional dengan harga terjangkau. Penawaran terbatas!",
+    features: [
+      "Website 3 halaman",
+      "Desain responsive",
+      "Domain .com 1 tahun",
+      "Hosting 1 tahun",
+      "SSL Certificate",
+      "WhatsApp button",
+      "Mobile friendly",
+      "Revisi 1x",
+      "Support 14 hari",
+    ],
+    popular: false,
+    promo: true,
+    cta: "Ambil Promo",
+  },
+  {
     name: "Starter",
     price: "3.5",
     period: "juta",
@@ -22,6 +42,7 @@ const plans = [
       "Support 30 hari",
     ],
     popular: false,
+    promo: false,
     cta: "Pilih Paket",
   },
   {
@@ -43,6 +64,7 @@ const plans = [
       "Support 90 hari",
     ],
     popular: true,
+    promo: false,
     cta: "Pilih Paket",
   },
   {
@@ -65,6 +87,7 @@ const plans = [
       "Dedicated project manager",
     ],
     popular: false,
+    promo: false,
     cta: "Hubungi Kami",
   },
 ];
@@ -92,7 +115,7 @@ export function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -100,9 +123,11 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
+              className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
                   ? "bg-white border-primary shadow-lg scale-[1.02]"
+                  : plan.promo
+                  ? "bg-gradient-to-br from-orange-50 to-red-50 border-orange-300 shadow-md"
                   : "bg-white border-slate-200 hover:border-primary/30"
               }`}
             >
@@ -110,6 +135,11 @@ export function PricingSection() {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-primary text-white text-xs font-medium flex items-center gap-1">
                   <Star size={12} className="fill-white" />
                   Paling Populer
+                </div>
+              )}
+              {plan.promo && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-red-500 text-white text-xs font-bold flex items-center gap-1">
+                  🔥 PROMO TERBATAS
                 </div>
               )}
 
@@ -127,6 +157,8 @@ export function PricingSection() {
                 className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
                   plan.popular
                     ? "gradient-primary text-white hover:shadow-lg"
+                    : plan.promo
+                    ? "bg-red-500 text-white hover:bg-red-600 hover:shadow-lg"
                     : "border border-slate-300 text-slate-900 hover:border-primary hover:text-primary"
                 }`}
               >

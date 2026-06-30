@@ -33,7 +33,7 @@ export const NAP = {
   },
   phone: "+6285603768433",
   whatsapp: "6285603768433",
-  email: "hello@nufanas.com",
+  email: "nufanaswebservice@gmail.com",
   website: "https://nufanas.com",
   geo: {
     latitude: -6.8957,

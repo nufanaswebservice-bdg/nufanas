@@ -106,18 +106,19 @@ export function Footer() {
             <h3 className="font-semibold text-white mb-4">Area Layanan</h3>
             <div className="flex flex-wrap gap-2">
               {[
+                "Seluruh Indonesia",
                 "Bandung",
-                "Cimahi",
-                "Lembang",
-                "Dago",
-                "Setiabudi",
-                "Pasteur",
-                "Buah Batu",
-                "Antapani",
-                "Kopo",
-                "Soreang",
-                "Rancaekek",
-                "Cileunyi",
+                "Jakarta",
+                "Surabaya",
+                "Yogyakarta",
+                "Semarang",
+                "Medan",
+                "Makassar",
+                "Bali",
+                "Malang",
+                "Bogor",
+                "Bekasi",
+                "Tangerang",
               ].map((area) => (
                 <span
                   key={area}
