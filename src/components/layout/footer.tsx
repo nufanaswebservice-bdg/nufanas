@@ -13,10 +13,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-sm">
-                N
-              </div>
-              <span className="font-bold text-xl text-white">Nufanas</span>
+              <img
+                src="/images/logo-nufanas.png"
+                alt="Nufanas Logo"
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">
               Digital agency dan software house profesional di Bandung. Jasa

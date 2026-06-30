@@ -39,10 +39,11 @@ export function Navbar() {
             className="flex items-center gap-2 font-bold text-xl"
             aria-label="Nufanas - Beranda"
           >
-            <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-sm">
-              N
-            </div>
-            <span className="gradient-text">Nufanas</span>
+            <img
+              src="/images/logo-nufanas.png"
+              alt="Nufanas Logo"
+              className="h-8 sm:h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
