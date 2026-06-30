@@ -115,7 +115,7 @@ export default function RootLayout({
           <JsonLd data={generateLocalBusinessSchema()} />
           <JsonLd data={generateWebsiteSchema()} />
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen overflow-x-hidden">{children}</main>
           <Footer />
           <FloatingWhatsApp />
         </ThemeProvider>
