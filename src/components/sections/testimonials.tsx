@@ -88,7 +88,7 @@ export function TestimonialsSection() {
               className="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all"
             >
               <Quote size={20} className="text-primary/30 mb-4" />
-              <p className="text-sm text-muted mb-4 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
               <div className="flex items-center gap-1 mb-4">

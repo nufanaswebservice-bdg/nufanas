@@ -52,8 +52,8 @@ export function TechnologySection() {
               whileHover={{ scale: 1.05, y: -4 }}
               className="p-5 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-center hover:border-primary/30 hover:shadow-md transition-all cursor-default"
             >
-              <p className="font-semibold text-sm mb-1">{tech.name}</p>
-              <p className="text-xs text-muted">{tech.category}</p>
+              <p className="font-semibold text-sm mb-1 text-slate-900 dark:text-white">{tech.name}</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">{tech.category}</p>
             </motion.div>
           ))}
         </div>

@@ -71,7 +71,7 @@ export function IndustriesSection() {
                 <div className="text-muted group-hover:text-primary transition-colors">
                   {industry.icon}
                 </div>
-                <span className="text-xs font-medium text-center">
+                <span className="text-xs font-medium text-center text-slate-700 dark:text-slate-200">
                   {industry.name}
                 </span>
               </Link>

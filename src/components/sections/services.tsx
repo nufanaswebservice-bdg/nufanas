@@ -72,10 +72,10 @@ export function ServicesSection() {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
                   {iconMap[service.icon] || <Globe size={24} />}
                 </div>
-                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-white">
                   {service.shortTitle}
                 </h3>
-                <p className="text-sm text-muted mb-4 line-clamp-3">
+                <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
                   {service.description}
                 </p>
                 <div className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">

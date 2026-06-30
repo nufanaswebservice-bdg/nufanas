@@ -113,13 +113,13 @@ export function PricingSection() {
                 </div>
               )}
 
-              <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-              <p className="text-sm text-muted mb-4">{plan.description}</p>
+              <h3 className="text-xl font-bold mb-1 text-slate-900 dark:text-white">{plan.name}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{plan.description}</p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-sm text-muted">Rp</span>
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-muted">/{plan.period}</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400">Rp</span>
+                <span className="text-4xl font-bold text-slate-900 dark:text-white">{plan.price}</span>
+                <span className="text-slate-500 dark:text-slate-400">/{plan.period}</span>
               </div>
 
               <Link
@@ -140,7 +140,7 @@ export function PricingSection() {
                       size={16}
                       className="text-green-500 mt-0.5 shrink-0"
                     />
-                    <span className="text-sm text-muted">{feature}</span>
+                    <span className="text-sm text-slate-600 dark:text-slate-300">{feature}</span>
                   </li>
                 ))}
               </ul>

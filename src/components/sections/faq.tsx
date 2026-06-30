@@ -102,7 +102,7 @@ export function FAQSection() {
                 className="w-full flex items-center justify-between p-5 text-left"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-medium text-sm pr-4">
+                <span className="font-medium text-sm pr-4 text-slate-900 dark:text-white">
                   {faq.question}
                 </span>
                 {openIndex === index ? (
@@ -119,7 +119,7 @@ export function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="px-5 pb-5 text-sm text-muted leading-relaxed">
+                    <div className="px-5 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

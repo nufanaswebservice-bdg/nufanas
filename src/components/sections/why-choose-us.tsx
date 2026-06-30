@@ -85,8 +85,8 @@ export function WhyChooseUsSection() {
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all">
                 {reason.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{reason.title}</h3>
-              <p className="text-muted text-sm leading-relaxed">
+              <h3 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{reason.title}</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>

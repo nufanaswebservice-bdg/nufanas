@@ -29,12 +29,12 @@
 @layer base {
   .dark {
     --color-background: #0f172a;
-    --color-foreground: #f8fafc;
+    --color-foreground: #f1f5f9;
     --color-card: #1e293b;
-    --color-card-foreground: #f8fafc;
+    --color-card-foreground: #f1f5f9;
     --color-border: #334155;
-    --color-muted: #94a3b8;
-    --color-muted-foreground: #64748b;
+    --color-muted: #cbd5e1;
+    --color-muted-foreground: #94a3b8;
   }
 
   * {

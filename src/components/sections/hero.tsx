@@ -43,7 +43,7 @@ export function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-muted max-w-xl mb-8 leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-xl mb-8 leading-relaxed">
               Nufanas membantu bisnis di Bandung dan Jawa Barat membangun
               kehadiran digital yang kuat. Website premium, SEO-ready, dan
               performa cepat yang siap ranking di Google.
@@ -133,8 +133,8 @@ export function HeroSection() {
                     <span className="text-green-600 font-bold text-sm">100</span>
                   </div>
                   <div>
-                    <p className="text-xs text-muted">Performance</p>
-                    <p className="text-sm font-semibold">Lighthouse Score</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Performance</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">Lighthouse Score</p>
                   </div>
                 </div>
               </motion.div>
@@ -150,8 +150,8 @@ export function HeroSection() {
                     <span className="text-primary font-bold text-sm">#1</span>
                   </div>
                   <div>
-                    <p className="text-xs text-muted">Google Ranking</p>
-                    <p className="text-sm font-semibold">Page 1</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Google Ranking</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">Page 1</p>
                   </div>
                 </div>
               </motion.div>
