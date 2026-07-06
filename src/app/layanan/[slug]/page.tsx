@@ -134,7 +134,7 @@ export default async function ServicePage({ params }: Props) {
                 Konsultasi Gratis
               </Link>
               <a
-                href={`https://wa.me/6285603768433?text=${encodeURIComponent(`Halo Nufanas, saya tertarik dengan ${service.title}. Bisa konsultasi?`)}`}
+                href={`https://wa.me/6285724623601?text=${encodeURIComponent(`Halo Nufanas, saya tertarik dengan ${service.title}. Bisa konsultasi?`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-green-500 text-green-600 font-medium hover:bg-green-50:bg-green-900/20 transition-all"
@@ -270,7 +270,7 @@ export default async function ServicePage({ params }: Props) {
               <Link href="/kontak" className="h-11 px-6 rounded-lg bg-white text-primary font-medium inline-flex items-center hover:bg-white/90 transition-all">
                 Request Proposal
               </Link>
-              <a href="https://wa.me/6285603768433" target="_blank" rel="noopener noreferrer" className="h-11 px-6 rounded-lg border border-white/30 text-white font-medium inline-flex items-center hover:bg-white/10 transition-all">
+              <a href="https://wa.me/6285724623601" target="_blank" rel="noopener noreferrer" className="h-11 px-6 rounded-lg border border-white/30 text-white font-medium inline-flex items-center hover:bg-white/10 transition-all">
                 WhatsApp Sekarang
               </a>
             </div>

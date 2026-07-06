@@ -31,8 +31,8 @@ export const NAP = {
     postalCode: "40131",
     country: "ID",
   },
-  phone: "+6285603768433",
-  whatsapp: "6285603768433",
+  phone: "+6285724623601",
+  whatsapp: "6285724623601",
   email: "nufanaswebservice@gmail.com",
   website: "https://nufanas.com",
   geo: {
