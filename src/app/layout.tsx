@@ -103,17 +103,23 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jakarta.variable} font-sans antialiased`}
       >
-        {/* Google Tag (gtag.js) - Google Ads */}
+        {/* Google Tag (gtag.js) - Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TD4NKD79DS"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Google Tag (gtag.js) - Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16782812965"
+          strategy="afterInteractive"
+        />
+        <Script id="google-gtag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-TD4NKD79DS');
+            gtag('config', 'AW-16782812965');
           `}
         </Script>
         <ThemeProvider
