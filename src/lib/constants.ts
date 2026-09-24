@@ -568,8 +568,8 @@ export const NAVIGATION = {
     { label: "Kontak", href: "/kontak" },
   ],
   services: [
-    { label: "Website Development", href: "/layanan/jasa-website-bandung" },
-    { label: "Mobile App Development", href: "/layanan/jasa-pembuatan-aplikasi-bandung" },
+    { label: "Jasa Pembuatan Website", href: "/jasa-pembuatan-website" },
+    { label: "Jasa Pembuatan Aplikasi", href: "/jasa-pembuatan-aplikasi" },
     { label: "Web Application", href: "/layanan/jasa-web-application-bandung" },
     { label: "Enterprise Software (ERP/CRM)", href: "/layanan/jasa-erp-bandung" },
     { label: "Custom Software", href: "/layanan/jasa-custom-software-bandung" },

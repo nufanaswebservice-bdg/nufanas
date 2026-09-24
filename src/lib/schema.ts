@@ -183,6 +183,30 @@ export function generateServiceSchema(service: {
   };
 }
 
+export function generatePillarServiceSchema(service: {
+  title: string;
+  description: string;
+  path: string;
+  serviceType: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_CONFIG.url}${service.path}/#service`,
+    name: service.title,
+    description: service.description,
+    url: `${SITE_CONFIG.url}${service.path}`,
+    provider: {
+      "@id": `${SITE_CONFIG.url}/#organization`,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    serviceType: service.serviceType,
+  };
+}
+
 export function generateFAQSchema(
   faqs: { question: string; answer: string }[]
 ) {

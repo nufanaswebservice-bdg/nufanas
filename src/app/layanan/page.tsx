@@ -13,6 +13,25 @@ export const metadata: Metadata = {
   },
 };
 
+const pillarLinks: Record<string, { href: string; label: string }> = {
+  "website-development": {
+    href: "/jasa-pembuatan-website",
+    label: "Jasa Pembuatan Website",
+  },
+  "mobile-app-development": {
+    href: "/jasa-pembuatan-aplikasi",
+    label: "Jasa Pembuatan Aplikasi",
+  },
+  "web-application": {
+    href: "/jasa-pembuatan-aplikasi",
+    label: "Jasa Pembuatan Aplikasi",
+  },
+  "custom-software": {
+    href: "/jasa-pembuatan-aplikasi",
+    label: "Jasa Pembuatan Aplikasi",
+  },
+};
+
 export default function LayananPage() {
   return (
     <>
@@ -61,6 +80,17 @@ export default function LayananPage() {
                 </h2>
                 <p className="text-slate-600 mb-6">
                   {category.description}
+                  {pillarLinks[category.slug] && (
+                    <>
+                      {" "}
+                      <Link
+                        href={pillarLinks[category.slug].href}
+                        className="font-medium text-primary hover:underline"
+                      >
+                        Lihat {pillarLinks[category.slug].label} →
+                      </Link>
+                    </>
+                  )}
                 </p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {services.map((service) => (

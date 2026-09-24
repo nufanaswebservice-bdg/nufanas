@@ -58,7 +58,13 @@ export function Footer() {
               {SERVICE_CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/layanan`}
+                    href={
+                      cat.slug === "website-development"
+                        ? "/jasa-pembuatan-website"
+                        : cat.slug === "mobile-app-development"
+                          ? "/jasa-pembuatan-aplikasi"
+                          : "/layanan"
+                    }
                     className="text-sm text-slate-400 hover:text-primary transition-colors"
                   >
                     {cat.shortTitle}

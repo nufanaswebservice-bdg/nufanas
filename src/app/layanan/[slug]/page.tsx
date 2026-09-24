@@ -55,6 +55,14 @@ export default async function ServicePage({ params }: Props) {
 
   const isAppService = slug.includes("aplikasi") || slug.includes("erp") || slug.includes("crm") || slug.includes("hris") || slug.includes("pos") || slug.includes("saas") || slug.includes("marketplace") || slug.includes("dashboard") || slug.includes("sistem-informasi") || slug.includes("custom-software") || slug.includes("web-application");
 
+  const appCategories = ["mobile-app-development", "web-application", "custom-software", "enterprise-software"];
+  const pillarLink =
+    service.category === "website-development"
+      ? { href: "/jasa-pembuatan-website", label: "jasa pembuatan website" }
+      : appCategories.includes(service.category)
+        ? { href: "/jasa-pembuatan-aplikasi", label: "jasa pembuatan aplikasi" }
+        : null;
+
   const faqs = [
     {
       question: `Berapa biaya ${service.title.toLowerCase()}?`,
@@ -123,6 +131,15 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-lg text-slate-600 leading-relaxed">
               {service.description}
             </p>
+            {pillarLink && (
+              <p className="mt-3 text-sm text-slate-500">
+                Layanan ini bagian dari{" "}
+                <Link href={pillarLink.href} className="text-primary hover:underline">
+                  {pillarLink.label}
+                </Link>{" "}
+                Nufanas untuk seluruh Indonesia.
+              </p>
+            )}
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <span className="text-2xl font-bold text-primary">
                 {service.price}

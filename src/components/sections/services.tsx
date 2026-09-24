@@ -29,8 +29,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 const categoryLinks: Record<string, string> = {
-  "website-development": "/layanan/jasa-website-bandung",
-  "mobile-app-development": "/layanan/jasa-pembuatan-aplikasi-bandung",
+  "website-development": "/jasa-pembuatan-website",
+  "mobile-app-development": "/jasa-pembuatan-aplikasi",
   "web-application": "/layanan/jasa-web-application-bandung",
   "enterprise-software": "/layanan/jasa-erp-bandung",
   "custom-software": "/layanan/jasa-custom-software-bandung",
