@@ -37,13 +37,6 @@ export function generateOrganizationSchema() {
       opens: h.open,
       closes: h.close,
     })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "127",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 }
 
@@ -131,14 +124,6 @@ export function generateWebsiteSchema() {
     description: SITE_CONFIG.description,
     publisher: {
       "@id": `${SITE_CONFIG.url}/#organization`,
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_CONFIG.url}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
     },
     inLanguage: "id-ID",
   };
