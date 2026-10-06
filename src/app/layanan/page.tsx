@@ -89,7 +89,7 @@ export default function LayananPage() {
                   {services.map((service) => (
                     <Link
                       key={service.slug}
-                      href={`/layanan/${service.slug}`}
+                      href={service.path}
                       className="group p-5 card card-hover"
                     >
                       <h3 className="font-semibold mb-1 text-sm group-hover:text-primary transition-colors text-slate-900">
@@ -130,7 +130,7 @@ export default function LayananPage() {
               {seoServices.map((service) => (
                 <Link
                   key={service.slug}
-                  href={`/layanan/${service.slug}`}
+                  href={service.path}
                   className="group p-5 card card-hover"
                 >
                   <h3 className="font-semibold mb-1 text-sm group-hover:text-primary transition-colors text-slate-900">

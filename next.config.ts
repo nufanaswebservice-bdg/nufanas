@@ -57,6 +57,20 @@ const LEGACY_BLOG_REDIRECTS: Record<string, string> = {
   "software-house-bandung-cara-memilih": "/blog/cara-memilih-software-house",
 };
 
+// Layanan yang sekarang punya dedicated page /jasa-* (Phase 2)
+const LAYANAN_TO_JASA: Record<string, string> = {
+  "website-company-profile": "/jasa-website-company-profile",
+  "website-ecommerce": "/jasa-website-ecommerce",
+  "website-custom": "/jasa-website-custom",
+  "web-application": "/jasa-web-application",
+  "aplikasi-android": "/jasa-aplikasi-android",
+  "aplikasi-ios": "/jasa-aplikasi-ios",
+  "aplikasi-mobile": "/jasa-aplikasi-mobile",
+  "aplikasi-bisnis": "/jasa-pembuatan-aplikasi-bisnis",
+  "custom-software": "/jasa-custom-software",
+  "sistem-informasi": "/jasa-pembuatan-sistem-informasi",
+};
+
 const nextConfig: NextConfig = {
   output: "standalone",
   turbopack: {
@@ -65,6 +79,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...Object.entries(LAYANAN_TO_JASA).map(([slug, destination]) => ({
+        source: `/layanan/${slug}`,
+        destination,
+        permanent: true,
+      })),
       ...Object.entries(LEGACY_SERVICE_REDIRECTS).map(([slug, destination]) => ({
         source: `/layanan/${slug}`,
         destination,

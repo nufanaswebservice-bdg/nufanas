@@ -20,20 +20,20 @@ import {
 } from "lucide-react";
 
 const industries = [
-  { icon: <Building size={20} />, name: "Company Profile", href: "/layanan/website-company-profile" },
-  { icon: <ShoppingBag size={20} />, name: "E-Commerce", href: "/layanan/website-ecommerce" },
+  { icon: <Building size={20} />, name: "Company Profile", href: "/jasa-website-company-profile" },
+  { icon: <ShoppingBag size={20} />, name: "E-Commerce", href: "/jasa-website-ecommerce" },
   { icon: <Heart size={20} />, name: "Klinik & RS", href: "/layanan/website-booking" },
-  { icon: <GraduationCap size={20} />, name: "Sekolah", href: "/layanan/website-custom" },
-  { icon: <Coffee size={20} />, name: "Cafe & Restoran", href: "/layanan/aplikasi-bisnis" },
+  { icon: <GraduationCap size={20} />, name: "Sekolah", href: "/jasa-website-custom" },
+  { icon: <Coffee size={20} />, name: "Cafe & Restoran", href: "/jasa-pembuatan-aplikasi-bisnis" },
   { icon: <Hotel size={20} />, name: "Hotel", href: "/layanan/website-booking" },
   { icon: <Car size={20} />, name: "Rental Mobil", href: "/layanan/website-booking" },
   { icon: <Plane size={20} />, name: "Travel & Tour", href: "/layanan/website-booking" },
-  { icon: <Hammer size={20} />, name: "Kontraktor", href: "/layanan/website-company-profile" },
-  { icon: <Home size={20} />, name: "Properti", href: "/layanan/website-custom" },
-  { icon: <Factory size={20} />, name: "Manufaktur", href: "/layanan/sistem-informasi" },
-  { icon: <Truck size={20} />, name: "Logistik", href: "/layanan/aplikasi-bisnis" },
-  { icon: <CreditCard size={20} />, name: "POS & Kasir", href: "/layanan/aplikasi-bisnis" },
-  { icon: <BarChart3 size={20} />, name: "ERP & CRM", href: "/layanan/sistem-informasi" },
+  { icon: <Hammer size={20} />, name: "Kontraktor", href: "/jasa-website-company-profile" },
+  { icon: <Home size={20} />, name: "Properti", href: "/jasa-website-custom" },
+  { icon: <Factory size={20} />, name: "Manufaktur", href: "/jasa-pembuatan-sistem-informasi" },
+  { icon: <Truck size={20} />, name: "Logistik", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { icon: <CreditCard size={20} />, name: "POS & Kasir", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { icon: <BarChart3 size={20} />, name: "ERP & CRM", href: "/jasa-pembuatan-sistem-informasi" },
 ];
 
 export function IndustriesSection() {

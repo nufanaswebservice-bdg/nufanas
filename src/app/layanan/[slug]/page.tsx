@@ -20,12 +20,18 @@ type Props = {
 
 const allServicesWithSeo = [...ALL_SERVICES, SEO_SERVICE];
 
+// Slugs yang punya dedicated page /jasa-* dialihkan via next.config redirects;
+// jangan generate halaman /layanan untuk mereka supaya tidak masuk sitemap.
+const layananServices = allServicesWithSeo.filter((s) =>
+  (s as { path?: string }).path?.startsWith("/layanan/")
+);
+
 function getService(slug: string) {
-  return allServicesWithSeo.find((s) => s.slug === slug);
+  return layananServices.find((s) => s.slug === slug);
 }
 
 export async function generateStaticParams() {
-  return allServicesWithSeo.map((service) => ({
+  return layananServices.map((service) => ({
     slug: service.slug,
   }));
 }
@@ -94,6 +100,9 @@ export default async function ServicePage({ params }: Props) {
       answer: `Ya, kami melayani client di seluruh Indonesia — ${ENTITIES.coverage}. Konsultasi dan koordinasi project bisa 100% remote via WhatsApp, Zoom, atau Google Meet.`,
     },
   ];
+
+  const serviceHref = (s: (typeof allServicesWithSeo)[number]) =>
+    (s as { path?: string }).path ?? `/layanan/${s.slug}`;
 
   const relatedServices = allServicesWithSeo
     .filter((s) => s.slug !== slug && s.category === service.category)
@@ -306,7 +315,7 @@ export default async function ServicePage({ params }: Props) {
                 {relatedServices.map((related) => (
                   <Link
                     key={related.slug}
-                    href={`/layanan/${related.slug}`}
+                    href={serviceHref(related)}
                     className="p-5 card card-hover"
                   >
                     <h3 className="font-semibold mb-1 text-sm text-slate-900">{related.title}</h3>
@@ -324,7 +333,7 @@ export default async function ServicePage({ params }: Props) {
               {otherServices.map((other) => (
                 <Link
                   key={other.slug}
-                  href={`/layanan/${other.slug}`}
+                  href={serviceHref(other)}
                   className="p-5 card card-hover"
                 >
                   <h3 className="font-semibold mb-1 text-sm text-slate-900">{other.title}</h3>

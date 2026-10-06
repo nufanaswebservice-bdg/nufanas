@@ -69,27 +69,27 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/layanan/website-ecommerce" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                <Link href="/jasa-website-ecommerce" className="text-sm text-slate-400 hover:text-primary transition-colors">
                   Website E-Commerce
                 </Link>
               </li>
               <li>
-                <Link href="/layanan/web-application" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                <Link href="/jasa-web-application" className="text-sm text-slate-400 hover:text-primary transition-colors">
                   Web Application
                 </Link>
               </li>
               <li>
-                <Link href="/layanan/aplikasi-mobile" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                <Link href="/jasa-aplikasi-mobile" className="text-sm text-slate-400 hover:text-primary transition-colors">
                   Aplikasi Mobile
                 </Link>
               </li>
               <li>
-                <Link href="/layanan/custom-software" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                <Link href="/jasa-custom-software" className="text-sm text-slate-400 hover:text-primary transition-colors">
                   Custom Software
                 </Link>
               </li>
               <li>
-                <Link href="/layanan/sistem-informasi" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                <Link href="/jasa-pembuatan-sistem-informasi" className="text-sm text-slate-400 hover:text-primary transition-colors">
                   Sistem Informasi
                 </Link>
               </li>

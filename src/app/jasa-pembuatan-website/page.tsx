@@ -64,7 +64,7 @@ const websiteTypes = [
     title: "Website Company Profile",
     description:
       "Website resmi perusahaan untuk membangun kredibilitas: profil bisnis, layanan, tim, portfolio, dan kontak. Wajah digital perusahaan Anda yang bekerja 24 jam.",
-    href: "/layanan/website-company-profile",
+    href: "/jasa-website-company-profile",
   },
   {
     icon: <Store size={22} />,
@@ -78,28 +78,28 @@ const websiteTypes = [
     title: "Website E-Commerce / Toko Online",
     description:
       "Toko online dengan katalog produk, keranjang belanja, checkout multi-payment gateway, ongkir otomatis, dan order tracking untuk pelanggan.",
-    href: "/layanan/website-ecommerce",
+    href: "/jasa-website-ecommerce",
   },
   {
     icon: <Globe size={22} />,
     title: "Website Corporate & Industri",
     description:
       "Website korporat dan manufaktur dengan struktur halaman lengkap: tentang perusahaan, lini bisnis, sertifikasi, karier, dan investor relations.",
-    href: "/layanan/website-company-profile",
+    href: "/jasa-website-company-profile",
   },
   {
     icon: <Users size={22} />,
     title: "Website Organisasi & Komunitas",
     description:
       "Portal untuk yayasan, komunitas, dan organisasi: manajemen anggota, agenda kegiatan, galeri, donasi, dan pengumuman resmi.",
-    href: "/layanan/web-application",
+    href: "/jasa-web-application",
   },
   {
     icon: <GraduationCap size={22} />,
     title: "Website Sekolah & Pendidikan",
     description:
       "Website sekolah dan lembaga kursus: profil program, pendaftaran online (PPDB), berita kegiatan, e-learning, dan portal informasi siswa.",
-    href: "/layanan/website-custom",
+    href: "/jasa-website-custom",
   },
   {
     icon: <Plane size={22} />,
@@ -120,24 +120,24 @@ const websiteTypes = [
     title: "Website Custom",
     description:
       "Website yang dibangun dari nol sesuai kebutuhan spesifik bisnis Anda — bukan template. Desain, fitur, dan alur disesuaikan dengan proses bisnis.",
-    href: "/layanan/website-custom",
+    href: "/jasa-website-custom",
   },
   {
     icon: <LayoutDashboard size={22} />,
     title: "Web Application",
     description:
       "Aplikasi berbasis web dengan login, database, dashboard, dan logika bisnis kompleks — bukan sekadar website tampilan.",
-    href: "/layanan/web-application",
+    href: "/jasa-web-application",
   },
 ];
 
 const otherWebsiteTypes = [
   { label: "website hotel", href: "/layanan/website-booking" },
   { label: "website klinik", href: "/layanan/website-booking" },
-  { label: "website cafe & restoran", href: "/layanan/website-custom" },
-  { label: "website kontraktor", href: "/layanan/website-company-profile" },
-  { label: "website properti", href: "/layanan/website-custom" },
-  { label: "website furniture", href: "/layanan/website-ecommerce" },
+  { label: "website cafe & restoran", href: "/jasa-website-custom" },
+  { label: "website kontraktor", href: "/jasa-website-company-profile" },
+  { label: "website properti", href: "/jasa-website-custom" },
+  { label: "website furniture", href: "/jasa-website-ecommerce" },
   { label: "landing page", href: "/layanan/landing-page" },
 ];
 
@@ -338,7 +338,7 @@ export default function JasaPembuatanWebsitePage() {
           <header className="max-w-3xl mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-5 text-slate-900 leading-tight">
               Jasa Pembuatan Website{" "}
-              <span className="gradient-text">Profesional</span>
+              <span className="gradient-text">Profesional & Custom</span>
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
               Nufanas adalah software house yang menyediakan{" "}
@@ -475,19 +475,19 @@ export default function JasaPembuatanWebsitePage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/layanan/website-custom"
+                  href="/jasa-website-custom"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Website Custom <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="/layanan/web-application"
+                  href="/jasa-web-application"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Web Application <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="/layanan/custom-software"
+                  href="/jasa-custom-software"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Custom Software <ArrowRight size={14} />
@@ -628,6 +628,44 @@ export default function JasaPembuatanWebsitePage() {
                   struktur URL yang bersih. Website cepat bukan hanya baik
                   untuk SEO — pengunjung tidak suka menunggu.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security & Maintenance */}
+        <section className="mb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-3 text-slate-900">
+              Keamanan & Maintenance
+            </h2>
+            <p className="text-slate-600 mb-8 max-w-3xl">
+              Website bukan proyek sekali jadi — ia perlu dijaga agar tetap
+              aman, cepat, dan relevan. Ini yang kami lakukan di sisi
+              keamanan dan pemeliharaan.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  Keamanan sejak development
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <li>SSL/HTTPS di semua halaman, tanpa kecuali</li>
+                  <li>Proteksi form dari spam dan injection</li>
+                  <li>Praktik secure coding: validasi input, sanitasi, rate limiting</li>
+                  <li>Backup terjadwal dan update dependency berkala</li>
+                </ul>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-slate-200">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  Maintenance & support pasca-launch
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <li>Garansi perbaikan bug 30-90 hari sesuai paket</li>
+                  <li>Paket maintenance bulanan untuk update konten & teknis</li>
+                  <li>Monitoring uptime dan performa</li>
+                  <li>Support via WhatsApp/email dengan SLA jelas</li>
+                </ul>
               </div>
             </div>
           </div>

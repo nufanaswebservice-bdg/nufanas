@@ -164,3 +164,54 @@ Sesuai IA baru — tanpa halaman kota. `/layanan/[slug]` menghasilkan 15 halaman
 - `Service` per halaman: `areaServed: Country Indonesia`, `serviceType` sesuai.
 - `BreadcrumbList` semua halaman dalam; `FAQPage` di halaman yang punya FAQ; `Article` di blog; `WebSite` global.
 - GEO: FAQ + speakable selectors, jawaban langsung (answer-first paragraphs), entity konsisten.
+
+---
+
+# PHASE 2 — IMPLEMENTED
+
+## P2.1 — National service architecture (canonical `/jasa-*`)
+
+Primary pillars (diperkuat — pricing, proses, teknologi, SEO/security/performance, maintenance, portfolio, FAQ, CTA):
+- `/jasa-pembuatan-website` — H1 "Jasa Pembuatan Website Profesional & Custom"
+- `/jasa-pembuatan-aplikasi` — H1 "Jasa Pembuatan Aplikasi Android, iOS & Custom"
+
+10 supporting pages baru, masing-masing konten unik via `src/components/services/service-detail.tsx`:
+`/jasa-website-company-profile`, `/jasa-website-ecommerce`, `/jasa-website-custom`,
+`/jasa-web-application`, `/jasa-aplikasi-android`, `/jasa-aplikasi-ios`,
+`/jasa-aplikasi-mobile`, `/jasa-pembuatan-aplikasi-bisnis`, `/jasa-custom-software`,
+`/jasa-pembuatan-sistem-informasi`.
+
+Tetap di `/layanan/*` (topik berbeda, tidak overlap): `/layanan/jasa-seo`,
+`/layanan/website-umkm`, `/layanan/website-booking`, `/layanan/landing-page`,
+`/layanan/aplikasi-ai`.
+
+## P2.2 — URL migration (308 permanent, verified)
+
+`/layanan/website-company-profile` → `/jasa-website-company-profile`,
+`/layanan/website-ecommerce` → `/jasa-website-ecommerce`,
+`/layanan/website-custom` → `/jasa-website-custom`,
+`/layanan/web-application` → `/jasa-web-application`,
+`/layanan/aplikasi-android` → `/jasa-aplikasi-android`,
+`/layanan/aplikasi-ios` → `/jasa-aplikasi-ios`,
+`/layanan/aplikasi-mobile` → `/jasa-aplikasi-mobile`,
+`/layanan/aplikasi-bisnis` → `/jasa-pembuatan-aplikasi-bisnis`,
+`/layanan/custom-software` → `/jasa-custom-software`,
+`/layanan/sistem-informasi` → `/jasa-pembuatan-sistem-informasi`.
+
+## P2.3 — Internal linking
+
+- `constants.ts`: setiap service punya field `path` kanonik — satu sumber kebenaran untuk URL.
+- Homepage: `PillarsSection` (2 pillar + sub-service links) + `PortfolioPreviewSection`.
+- Navbar mega-menu, footer, `/layanan` index, pillar pages, industries chips → semua pakai `/jasa-*`.
+- Related-services di `[slug]` dan service-detail pakai `path`.
+
+## P2.4 — Structured data
+
+`generatePillarServiceSchema` (path-based) dipakai semua halaman `/jasa-*`; schema `Service` lama yang masih mengacu `/layanan/custom-software` dikoreksi ke `/jasa-custom-software`.
+
+## P2.5 — Verification results (local standalone)
+
+- `tsc --noEmit`: clean. `eslint`: clean. `next build`: 94 pages OK, postbuild sitemap OK.
+- Sitemap: 86 URL, 0 referensi kota, semua `/jasa-*` masuk.
+- Routes: semua `/jasa-*` 200; 10 legacy `/layanan/<slug>` → 308 ke `/jasa-*`.
+- `/robots.txt`, `/sitemap.xml` 200 di standalone (Docker menyalin `public/` postbuild ke image runner).

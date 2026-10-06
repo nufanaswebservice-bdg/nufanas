@@ -83,6 +83,7 @@ export const SERVICE_CATEGORIES = [
   },
   {
     slug: "web-application",
+    path: "/jasa-web-application",
     title: "Web Application & Sistem Informasi",
     shortTitle: "Web App",
     description:
@@ -92,6 +93,7 @@ export const SERVICE_CATEGORIES = [
   },
   {
     slug: "custom-software",
+    path: "/jasa-custom-software",
     title: "Custom Software Development",
     shortTitle: "Custom Software",
     description:
@@ -116,6 +118,7 @@ export const SERVICE_CATEGORIES = [
 export const WEBSITE_SERVICES = [
   {
     slug: "website-company-profile",
+    path: "/jasa-website-company-profile",
     title: "Jasa Pembuatan Website Company Profile",
     shortTitle: "Website Company Profile",
     description:
@@ -127,6 +130,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "website-umkm",
+    path: "/layanan/website-umkm",
     title: "Jasa Pembuatan Website UMKM",
     shortTitle: "Website UMKM",
     description:
@@ -138,6 +142,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "website-ecommerce",
+    path: "/jasa-website-ecommerce",
     title: "Jasa Pembuatan Website E-Commerce & Toko Online",
     shortTitle: "Website E-Commerce",
     description:
@@ -149,6 +154,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "website-custom",
+    path: "/jasa-website-custom",
     title: "Jasa Pembuatan Website Custom",
     shortTitle: "Website Custom",
     description:
@@ -160,6 +166,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "web-application",
+    path: "/jasa-web-application",
     title: "Jasa Pembuatan Web Application",
     shortTitle: "Web Application",
     description:
@@ -171,6 +178,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "website-booking",
+    path: "/layanan/website-booking",
     title: "Jasa Pembuatan Website Booking & Reservasi",
     shortTitle: "Website Booking",
     description:
@@ -182,6 +190,7 @@ export const WEBSITE_SERVICES = [
   },
   {
     slug: "landing-page",
+    path: "/layanan/landing-page",
     title: "Jasa Pembuatan Landing Page",
     shortTitle: "Landing Page",
     description:
@@ -199,6 +208,7 @@ export const WEBSITE_SERVICES = [
 export const APP_SERVICES = [
   {
     slug: "aplikasi-android",
+    path: "/jasa-aplikasi-android",
     title: "Jasa Pembuatan Aplikasi Android",
     shortTitle: "Aplikasi Android",
     description:
@@ -210,6 +220,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "aplikasi-ios",
+    path: "/jasa-aplikasi-ios",
     title: "Jasa Pembuatan Aplikasi iOS",
     shortTitle: "Aplikasi iOS",
     description:
@@ -221,6 +232,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "aplikasi-mobile",
+    path: "/jasa-aplikasi-mobile",
     title: "Jasa Pembuatan Aplikasi Mobile",
     shortTitle: "Aplikasi Mobile",
     description:
@@ -232,6 +244,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "aplikasi-bisnis",
+    path: "/jasa-pembuatan-aplikasi-bisnis",
     title: "Jasa Pembuatan Aplikasi Bisnis",
     shortTitle: "Aplikasi Bisnis",
     description:
@@ -243,6 +256,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "custom-software",
+    path: "/jasa-custom-software",
     title: "Jasa Custom Software Development",
     shortTitle: "Custom Software",
     description:
@@ -254,6 +268,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "sistem-informasi",
+    path: "/jasa-pembuatan-sistem-informasi",
     title: "Jasa Pembuatan Sistem Informasi",
     shortTitle: "Sistem Informasi",
     description:
@@ -265,6 +280,7 @@ export const APP_SERVICES = [
   },
   {
     slug: "aplikasi-ai",
+    path: "/layanan/aplikasi-ai",
     title: "Jasa Pembuatan Aplikasi AI",
     shortTitle: "Aplikasi AI",
     description:
@@ -282,6 +298,7 @@ export const ALL_SERVICES = [...WEBSITE_SERVICES, ...APP_SERVICES] as const;
 // SEO service (national)
 export const SEO_SERVICE = {
   slug: "jasa-seo",
+  path: "/layanan/jasa-seo",
   title: "Jasa SEO Profesional",
   shortTitle: "Jasa SEO",
   description:
@@ -331,11 +348,11 @@ export const NAVIGATION = {
       label: "Jasa Pembuatan Website",
       href: "/jasa-pembuatan-website",
       items: [
-        { label: "Website Company Profile", href: "/layanan/website-company-profile" },
+        { label: "Website Company Profile", href: "/jasa-website-company-profile" },
         { label: "Website UMKM", href: "/layanan/website-umkm" },
-        { label: "Website E-Commerce", href: "/layanan/website-ecommerce" },
-        { label: "Website Custom", href: "/layanan/website-custom" },
-        { label: "Web Application", href: "/layanan/web-application" },
+        { label: "Website E-Commerce", href: "/jasa-website-ecommerce" },
+        { label: "Website Custom", href: "/jasa-website-custom" },
+        { label: "Web Application", href: "/jasa-web-application" },
         { label: "Website Booking", href: "/layanan/website-booking" },
         { label: "Landing Page", href: "/layanan/landing-page" },
       ],
@@ -344,12 +361,12 @@ export const NAVIGATION = {
       label: "Jasa Pembuatan Aplikasi",
       href: "/jasa-pembuatan-aplikasi",
       items: [
-        { label: "Aplikasi Android", href: "/layanan/aplikasi-android" },
-        { label: "Aplikasi iOS", href: "/layanan/aplikasi-ios" },
-        { label: "Aplikasi Mobile", href: "/layanan/aplikasi-mobile" },
-        { label: "Aplikasi Bisnis", href: "/layanan/aplikasi-bisnis" },
-        { label: "Custom Software", href: "/layanan/custom-software" },
-        { label: "Sistem Informasi", href: "/layanan/sistem-informasi" },
+        { label: "Aplikasi Android", href: "/jasa-aplikasi-android" },
+        { label: "Aplikasi iOS", href: "/jasa-aplikasi-ios" },
+        { label: "Aplikasi Mobile", href: "/jasa-aplikasi-mobile" },
+        { label: "Aplikasi Bisnis", href: "/jasa-pembuatan-aplikasi-bisnis" },
+        { label: "Custom Software", href: "/jasa-custom-software" },
+        { label: "Sistem Informasi", href: "/jasa-pembuatan-sistem-informasi" },
         { label: "Aplikasi AI", href: "/layanan/aplikasi-ai" },
       ],
     },

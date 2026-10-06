@@ -109,7 +109,7 @@ export function generateLocalBusinessSchema() {
             name: "Custom Software Development",
             description:
               "Pengembangan software custom: sistem informasi, ERP, CRM, dan platform SaaS",
-            url: `${SITE_CONFIG.url}/layanan/custom-software`,
+            url: `${SITE_CONFIG.url}/jasa-custom-software`,
           },
         },
         {

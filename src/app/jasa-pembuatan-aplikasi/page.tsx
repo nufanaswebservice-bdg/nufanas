@@ -62,63 +62,63 @@ const appTypes = [
     title: "Aplikasi Android",
     description:
       "Aplikasi Android native (Kotlin) atau cross-platform (Flutter/React Native) yang di-publish ke Google Play Store dengan performa optimal.",
-    href: "/layanan/aplikasi-android",
+    href: "/jasa-aplikasi-android",
   },
   {
     icon: <Smartphone size={22} />,
     title: "Aplikasi iOS",
     description:
       "Aplikasi iPhone dan iPad dengan Swift atau cross-platform — satu codebase yang juga menghasilkan versi Android sekaligus.",
-    href: "/layanan/aplikasi-ios",
+    href: "/jasa-aplikasi-ios",
   },
   {
     icon: <Smartphone size={22} />,
     title: "Aplikasi Mobile Cross-Platform",
     description:
       "Flutter atau React Native untuk menjangkau pengguna Android dan iOS sekaligus — lebih hemat biaya dan waktu dibanding dua codebase terpisah.",
-    href: "/layanan/aplikasi-mobile",
+    href: "/jasa-aplikasi-mobile",
   },
   {
     icon: <Globe size={22} />,
     title: "Web Application",
     description:
       "Aplikasi berbasis web yang berjalan di browser: sistem informasi, portal, dan platform dengan login, database, dan dashboard.",
-    href: "/layanan/web-application",
+    href: "/jasa-web-application",
   },
   {
     icon: <Building size={22} />,
     title: "Aplikasi Bisnis & Sistem Informasi",
     description:
       "Sistem informasi manajemen untuk mengotomasi proses operasional: data terpusat, laporan otomatis, dan alur kerja yang jelas.",
-    href: "/layanan/sistem-informasi",
+    href: "/jasa-pembuatan-sistem-informasi",
   },
   {
     icon: <Code size={22} />,
     title: "Aplikasi & Software Custom",
     description:
       "Software yang dirancang khusus mengikuti proses bisnis Anda — bukan memaksa bisnis menyesuaikan software jadi.",
-    href: "/layanan/custom-software",
+    href: "/jasa-custom-software",
   },
   {
     icon: <Cloud size={22} />,
     title: "Platform SaaS",
     description:
       "Produk Software as a Service multi-tenant: subscription, billing, onboarding pengguna, dan arsitektur yang siap scale.",
-    href: "/layanan/custom-software",
+    href: "/jasa-custom-software",
   },
   {
     icon: <BarChart size={22} />,
     title: "Dashboard & Admin System",
     description:
       "Dashboard analytics dan business intelligence: visualisasi data real-time, reporting, dan monitoring operasional dalam satu layar.",
-    href: "/layanan/web-application",
+    href: "/jasa-web-application",
   },
   {
     icon: <Store size={22} />,
     title: "Marketplace & Platform E-Commerce",
     description:
       "Platform marketplace multi-vendor atau aplikasi e-commerce custom dengan payment gateway, split payment, dan manajemen vendor.",
-    href: "/layanan/web-application",
+    href: "/jasa-web-application",
   },
   {
     icon: <Brain size={22} />,
@@ -130,14 +130,14 @@ const appTypes = [
 ];
 
 const otherAppTypes = [
-  { label: "ERP", href: "/layanan/sistem-informasi" },
-  { label: "CRM", href: "/layanan/sistem-informasi" },
-  { label: "HRIS", href: "/layanan/sistem-informasi" },
-  { label: "POS", href: "/layanan/aplikasi-bisnis" },
-  { label: "aplikasi kasir", href: "/layanan/aplikasi-bisnis" },
-  { label: "aplikasi inventory", href: "/layanan/aplikasi-bisnis" },
-  { label: "aplikasi klinik", href: "/layanan/aplikasi-bisnis" },
-  { label: "aplikasi sekolah", href: "/layanan/aplikasi-bisnis" },
+  { label: "ERP", href: "/jasa-pembuatan-sistem-informasi" },
+  { label: "CRM", href: "/jasa-pembuatan-sistem-informasi" },
+  { label: "HRIS", href: "/jasa-pembuatan-sistem-informasi" },
+  { label: "POS", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { label: "aplikasi kasir", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { label: "aplikasi inventory", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { label: "aplikasi klinik", href: "/jasa-pembuatan-aplikasi-bisnis" },
+  { label: "aplikasi sekolah", href: "/jasa-pembuatan-aplikasi-bisnis" },
   { label: "aplikasi hotel", href: "/layanan/website-booking" },
   { label: "aplikasi travel", href: "/layanan/website-booking" },
 ];
@@ -338,7 +338,7 @@ export default function JasaPembuatanAplikasiPage() {
           <header className="max-w-3xl mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-5 text-slate-900 leading-tight">
               Jasa Pembuatan Aplikasi{" "}
-              <span className="gradient-text">Profesional</span>
+              <span className="gradient-text">Profesional & Custom</span>
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
               Nufanas adalah software house yang menyediakan{" "}
@@ -596,6 +596,55 @@ export default function JasaPembuatanAplikasiPage() {
             >
               Lihat semua portfolio <ArrowRight size={16} />
             </Link>
+          </div>
+        </section>
+
+        {/* Security & Maintenance */}
+        <section className="mb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-3 text-slate-900">
+              Keamanan, Maintenance & Support
+            </h2>
+            <p className="text-slate-600 mb-8 max-w-3xl">
+              Aplikasi menyimpan data bisnis dan pengguna — keamanannya adalah
+              tanggung jawab serius, dan kebutuhan update tidak berhenti saat
+              aplikasi rilis.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-5">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  Keamanan aplikasi
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <li>Enkripsi data in-transit dan at-rest</li>
+                  <li>Auth aman: hashing, token, role & permission</li>
+                  <li>Proteksi API: rate limiting dan validasi input</li>
+                  <li>Audit keamanan sebelum launch</li>
+                </ul>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-slate-200">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  Testing & quality
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <li>Testing di device nyata, bukan hanya emulator</li>
+                  <li>UAT bersama tim Anda sebelum rilis</li>
+                  <li>Crash reporting & analytics terpasang</li>
+                  <li>Dampingi review Play Store/App Store</li>
+                </ul>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-slate-200">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  Pasca-launch
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <li>Garansi bug fix 3-12 bulan sesuai paket</li>
+                  <li>Paket maintenance: update OS, dependency, fitur</li>
+                  <li>Monitoring uptime dan performa server</li>
+                  <li>Support channel dedicated dengan SLA</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
