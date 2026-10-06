@@ -18,6 +18,7 @@ module.exports = {
     "/feed.xml",
     "/sitemap-articles.xml",
     "/manifest.json",
+    "/terima-kasih",
     // Blog articles are covered by sitemap-articles.xml (avoid duplication)
     "/blog/*",
   ],

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Send, Loader2 } from "lucide-react";
 import { NAP } from "@/lib/constants";
 
@@ -19,6 +20,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export function ContactForm() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -44,7 +46,7 @@ export function ContactForm() {
     setIsSuccess(true);
     reset();
 
-    setTimeout(() => setIsSuccess(false), 5000);
+    router.push("/terima-kasih");
   };
 
   return (
