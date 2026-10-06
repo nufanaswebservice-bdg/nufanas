@@ -8,7 +8,7 @@ export async function GET() {
     (article) => `
   <url>
     <loc>${SITE_CONFIG.url}/blog/${article.slug}</loc>
-    <lastmod>${article.date}</lastmod>
+    <lastmod>${article.updated || article.date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>`

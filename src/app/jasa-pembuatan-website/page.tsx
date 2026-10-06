@@ -168,8 +168,12 @@ const relatedArticles = [
     title: "10 Manfaat Website untuk UMKM di Era Digital",
   },
   {
-    slug: "responsive-design-pentingnya-untuk-mobile",
-    title: "Responsive Design: Mengapa Website Harus Mobile-Friendly?",
+    slug: "biaya-pembuatan-website",
+    title: "Biaya Pembuatan Website: Rincian Harga Jujur",
+  },
+  {
+    slug: "panduan-website-per-industri",
+    title: "Website untuk Bisnis: Panduan Fitur per Industri",
   },
   {
     slug: "optimasi-kecepatan-website-core-web-vitals",

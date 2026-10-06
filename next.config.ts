@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { BLOG_REDIRECTS } from "./src/lib/blog-data";
 
 // Old city-targeted service slugs → national equivalents (308 permanent)
 const LEGACY_SERVICE_REDIRECTS: Record<string, string> = {
@@ -102,6 +103,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       ...Object.entries(LEGACY_BLOG_REDIRECTS).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
+        destination,
+        permanent: true,
+      })),
+      // Phase 4: merged/removed articles → canonical target (from blog-data.ts)
+      ...Object.entries(BLOG_REDIRECTS).map(([slug, destination]) => ({
         source: `/blog/${slug}`,
         destination,
         permanent: true,

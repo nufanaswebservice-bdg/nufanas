@@ -281,6 +281,7 @@ export function generateArticleSchema(article: {
   datePublished: string;
   dateModified: string;
   author: string;
+  authorUrl?: string;
   image?: string;
 }) {
   return {
@@ -295,7 +296,7 @@ export function generateArticleSchema(article: {
     author: {
       "@type": "Person",
       name: article.author,
-      url: `${SITE_CONFIG.url}/tentang`,
+      url: article.authorUrl || `${SITE_CONFIG.url}/tentang`,
     },
     publisher: {
       "@id": `${SITE_CONFIG.url}/#organization`,

@@ -2,16 +2,30 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
-import { BLOG_ARTICLES } from "@/lib/blog-data";
+import {
+  getArticleBySlug,
+  getRelatedArticles,
+  BLOG_ARTICLES,
+  BLOG_CLUSTERS,
+  AUTHORS,
+} from "@/lib/blog-data";
 import { JsonLd } from "@/components/seo/json-ld";
-import { generateBreadcrumbSchema, generateArticleSchema, generateFAQSchema } from "@/lib/schema";
-import { Calendar, Clock, User, ArrowLeft, Tag } from "lucide-react";
+import {
+  generateBreadcrumbSchema,
+  generateArticleSchema,
+  generateFAQSchema,
+} from "@/lib/schema";
+import {
+  Calendar,
+  Clock,
+  User,
+  ChevronRight,
+  Tag,
+  ArrowRight,
+  FolderOpen,
+} from "lucide-react";
 
 type Props = { params: Promise<{ slug: string }> };
-
-function getArticle(slug: string) {
-  return BLOG_ARTICLES.find((a) => a.slug === slug);
-}
 
 export async function generateStaticParams() {
   return BLOG_ARTICLES.map((article) => ({ slug: article.slug }));
@@ -19,8 +33,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getArticleBySlug(slug);
   if (!article) return {};
+  const author = AUTHORS[article.author];
   return {
     title: article.title,
     description: article.description,
@@ -31,164 +46,298 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_CONFIG.url}/blog/${slug}`,
       type: "article",
       publishedTime: article.date,
-      authors: [article.author],
+      modifiedTime: article.updated || article.date,
+      authors: [author?.name || "Tim Nufanas"],
     },
   };
 }
 
-function generateContent(article: NonNullable<ReturnType<typeof getArticle>>) {
-  const keyword = article.tags[0] || article.title.toLowerCase();
-  return {
-    intro: `${article.title} adalah topik yang sering dicari oleh pebisnis dan profesional di Indonesia. Dalam artikel ini, kami membahas secara mendalam tentang ${keyword} — mulai dari pengertian dasar, manfaat, cara implementasi, hingga tips praktis yang bisa langsung Anda terapkan. Artikel ini dirancang untuk membantu Anda memahami konsep ${keyword} secara menyeluruh dan membuat keputusan yang tepat untuk bisnis Anda.`,
-    sections: [
-      {
-        title: `Apa Itu ${article.tags[0] ? article.tags[0].charAt(0).toUpperCase() + article.tags[0].slice(1) : article.category}?`,
-        content: `${article.description} Pemahaman yang benar tentang ${keyword} akan membantu Anda mengambil langkah strategis yang tepat. Di era digital saat ini, setiap bisnis — baik skala kecil maupun besar — perlu memahami pentingnya ${keyword} untuk bertahan dan berkembang di pasar yang semakin kompetitif.`,
-      },
-      {
-        title: `Mengapa ${article.category} Penting untuk Bisnis?`,
-        content: `Investasi dalam ${keyword} bukan lagi pilihan, melainkan keharusan. Bisnis yang mengadopsi ${keyword} secara konsisten menunjukkan pertumbuhan revenue 2-3x lipat dibanding kompetitor. Beberapa alasan utama pentingnya ${keyword}: meningkatkan visibilitas online, membangun kepercayaan pelanggan, otomasi proses bisnis, dan menghasilkan leads secara konsisten.`,
-      },
-      {
-        title: "Langkah-Langkah Implementasi",
-        content: `Untuk mengimplementasikan ${keyword} secara efektif, ikuti langkah-langkah berikut: 1) Analisis kebutuhan bisnis Anda, 2) Riset kompetitor dan market, 3) Tentukan budget dan timeline, 4) Pilih partner atau vendor yang tepat, 5) Eksekusi dengan monitoring berkala, 6) Evaluasi dan optimasi berkelanjutan. Setiap langkah memerlukan perhatian khusus untuk memastikan hasil yang optimal.`,
-      },
-      {
-        title: "Tips dan Best Practice",
-        content: `Berdasarkan pengalaman kami menangani 300+ project, berikut tips yang bisa Anda terapkan: Fokus pada kualitas, bukan kuantitas. Pastikan user experience menjadi prioritas utama. Lakukan testing secara menyeluruh sebelum launch. Pantau performa secara berkala menggunakan analytics. Iterasi dan improve berdasarkan data, bukan asumsi.`,
-      },
-      {
-        title: "Estimasi Biaya dan Timeline",
-        content: `Biaya untuk ${keyword} bervariasi tergantung kompleksitas dan scope. Untuk skala kecil, budget mulai dari Rp 800.000 - Rp 5.000.000. Skala menengah Rp 5.000.000 - Rp 25.000.000. Enterprise Rp 25.000.000+. Timeline rata-rata 2-12 minggu tergantung project. Nufanas menyediakan konsultasi gratis untuk estimasi yang lebih akurat.`,
-      },
-    ],
-    faqs: [
-      { question: `Berapa biaya ${keyword}?`, answer: `Biaya ${keyword} di Nufanas mulai dari Rp 800.000 untuk paket dasar hingga puluhan juta untuk project enterprise. Hubungi kami untuk konsultasi gratis dan estimasi akurat sesuai kebutuhan Anda.` },
-      { question: `Berapa lama proses ${keyword}?`, answer: `Proses ${keyword} rata-rata memakan waktu 2-12 minggu tergantung kompleksitas. Kami memberikan timeline yang jelas di awal project dan update progress secara berkala.` },
-      { question: `Apakah Nufanas melayani di seluruh Indonesia?`, answer: `Ya! Nufanas melayani client dari seluruh Indonesia. Komunikasi dan koordinasi project bisa 100% online via WhatsApp, Zoom, atau Google Meet.` },
-      { question: `Apa garansi yang diberikan?`, answer: `Semua project Nufanas memiliki garansi maintenance minimal 30 hari. Paket Professional dan Enterprise mendapatkan garansi hingga 12 bulan. Kami juga menyediakan paket maintenance bulanan.` },
-    ],
-    keyTakeaways: [
-      `${article.tags[0] ? article.tags[0].charAt(0).toUpperCase() + article.tags[0].slice(1) : article.category} adalah investasi penting untuk pertumbuhan bisnis digital`,
-      "Pilih partner yang berpengalaman dan memiliki portofolio yang relevan",
-      "Fokus pada kualitas dan user experience, bukan hanya harga murah",
-      "Lakukan riset dan perencanaan matang sebelum memulai project",
-      "Monitoring dan optimasi berkelanjutan adalah kunci kesuksesan jangka panjang",
-    ],
-  };
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const content = generateContent(article);
-  const relatedArticles = BLOG_ARTICLES.filter(
-    (a) => a.slug !== slug && a.category === article.category
-  ).slice(0, 4);
+  const cluster = BLOG_CLUSTERS[article.cluster];
+  const author = AUTHORS[article.author];
+  const related = getRelatedArticles(article, 4);
 
   return (
     <>
-      <JsonLd data={generateBreadcrumbSchema([
-        { name: "Beranda", href: "/" },
-        { name: "Blog", href: "/blog" },
-        { name: article.title, href: `/blog/${slug}` },
-      ])} />
-      <JsonLd data={generateArticleSchema({
-        title: article.title,
-        description: article.description,
-        slug: article.slug,
-        datePublished: article.date,
-        dateModified: article.date,
-        author: article.author,
-      })} />
-      <JsonLd data={generateFAQSchema(content.faqs)} />
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Beranda", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: cluster.label, href: "/blog" },
+          { name: article.title, href: `/blog/${slug}` },
+        ])}
+      />
+      <JsonLd
+        data={generateArticleSchema({
+          title: article.title,
+          description: article.description,
+          slug: article.slug,
+          datePublished: article.date,
+          dateModified: article.updated || article.date,
+          author: author?.name || "Tim Nufanas",
+          authorUrl: author ? `${SITE_CONFIG.url}/penulis/${author.slug}` : undefined,
+        })}
+      />
+      {article.faqs && article.faqs.length > 0 && (
+        <JsonLd data={generateFAQSchema(article.faqs)} />
+      )}
 
       <article className="pt-32 pb-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back */}
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary mb-6">
-            <ArrowLeft size={16} /> Kembali ke Blog
-          </Link>
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-slate-500">
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Beranda
+                </Link>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <ChevronRight size={14} className="text-slate-400" />
+                <Link
+                  href="/blog"
+                  className="hover:text-primary transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <ChevronRight size={14} className="text-slate-400" />
+                <span className="text-slate-400">{cluster.label}</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <ChevronRight size={14} className="text-slate-400" />
+                <span className="text-slate-900 font-medium line-clamp-1">
+                  {article.title}
+                </span>
+              </li>
+            </ol>
+          </nav>
 
           {/* Header */}
           <header className="mb-10">
-            <span className="text-xs font-medium text-primary px-3 py-1 bg-primary/10 rounded-full">
-              {article.category}
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary px-3 py-1 bg-primary/10 rounded-full">
+              <FolderOpen size={12} />
+              {cluster.label}
             </span>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-4 mb-4 leading-tight">
               {article.title}
             </h1>
-            <p className="text-lg text-slate-600 mb-4">{article.description}</p>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center gap-1"><User size={14} />{article.author}</span>
-              <span className="flex items-center gap-1"><Calendar size={14} />{new Date(article.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</span>
-              <span className="flex items-center gap-1"><Clock size={14} />{article.readTime}</span>
+            <p className="summary text-lg text-slate-600 mb-5">
+              {article.description}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
+              <Link
+                href={`/penulis/${author?.slug}`}
+                className="flex items-center gap-1.5 hover:text-primary transition-colors"
+              >
+                <User size={14} />
+                {author?.name || "Tim Nufanas"}
+              </Link>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                {formatDate(article.date)}
+                {article.updated && article.updated !== article.date && (
+                  <span className="text-slate-400">
+                    (diperbarui {formatDate(article.updated)})
+                  </span>
+                )}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {article.readTime}
+              </span>
             </div>
           </header>
 
-          {/* Key Takeaways */}
-          <section className="mb-10 p-6 rounded-2xl bg-primary/5 border border-primary/20">
-            <h2 className="text-lg font-bold text-slate-900 mb-3">📋 Key Takeaways</h2>
-            <ul className="space-y-2 text-sm text-slate-700">
-              {content.keyTakeaways.map((item, i) => (
-                <li key={i}>✅ {item}</li>
-              ))}
-            </ul>
-          </section>
+          {/* Intro */}
+          <p className="lead text-lg text-slate-700 mb-8">{article.intro}</p>
 
-          {/* Content */}
+          {/* Key Takeaways */}
+          {article.keyTakeaways.length > 0 && (
+            <section className="key-takeaways mb-10 p-6 rounded-2xl bg-primary/5 border border-primary/20">
+              <h2 className="text-lg font-bold text-slate-900 mb-3">
+                Ringkasan Singkat
+              </h2>
+              <ul className="space-y-2.5 text-sm text-slate-700">
+                {article.keyTakeaways.map((item, i) => (
+                  <li key={i} className="flex gap-2.5">
+                    <span className="text-primary font-bold shrink-0">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Body */}
           <div className="prose prose-slate max-w-none mb-10">
-            <p className="lead">{content.intro}</p>
-            {content.sections.map((section, i) => (
-              <div key={i}>
+            {article.sections.map((section, i) => (
+              <section key={i}>
                 <h2>{section.title}</h2>
-                <p>{section.content}</p>
-              </div>
+                <div dangerouslySetInnerHTML={{ __html: section.body }} />
+              </section>
             ))}
           </div>
 
           {/* FAQ */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">FAQ</h2>
-            <div className="space-y-4">
-              {content.faqs.map((faq, i) => (
-                <div key={i} className="p-5 rounded-xl bg-white border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">{faq.question}</h3>
-                  <p className="text-sm text-slate-600">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          {article.faqs && article.faqs.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                Pertanyaan Umum
+              </h2>
+              <div className="space-y-4">
+                {article.faqs.map((faq, i) => (
+                  <div
+                    key={i}
+                    className="p-5 rounded-xl bg-white border border-slate-200"
+                  >
+                    <h3 className="font-semibold text-slate-900 mb-2">
+                      {faq.question}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Related services */}
+          {article.relatedServices && article.relatedServices.length > 0 && (
+            <section className="mb-10 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+              <h2 className="text-lg font-bold text-slate-900 mb-4">
+                Layanan Terkait
+              </h2>
+              <ul className="space-y-2.5">
+                {article.relatedServices.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-center justify-between text-sm font-medium text-slate-800 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                      <ArrowRight
+                        size={14}
+                        className="text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Related portfolio */}
+          {article.relatedPortfolio && article.relatedPortfolio.length > 0 && (
+            <section className="mb-10 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+              <h2 className="text-lg font-bold text-slate-900 mb-4">
+                Project Terkait
+              </h2>
+              <ul className="space-y-2.5">
+                {article.relatedPortfolio.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-center justify-between text-sm font-medium text-slate-800 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                      <ArrowRight
+                        size={14}
+                        className="text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* CTA */}
           <section className="mb-10 p-8 rounded-2xl gradient-primary text-white text-center">
-            <h2 className="text-xl font-bold mb-2">Butuh Bantuan Profesional?</h2>
-            <p className="text-white/80 mb-4 text-sm">Konsultasi gratis dengan tim Nufanas untuk project Anda.</p>
-            <Link href="/kontak" className="inline-flex items-center h-10 px-6 rounded-lg bg-white text-primary font-medium text-sm">
+            <h2 className="text-xl font-bold mb-2">
+              Butuh Bantuan untuk Project Anda?
+            </h2>
+            <p className="text-white/80 mb-4 text-sm">
+              Konsultasi gratis dengan tim Nufanas — tanpa komitmen.
+            </p>
+            <Link
+              href="/kontak"
+              className="inline-flex items-center h-10 px-6 rounded-lg bg-white text-primary font-medium text-sm"
+            >
               Konsultasi Gratis
             </Link>
           </section>
 
+          {/* Author box */}
+          {author && (
+            <section className="mb-10 p-6 rounded-2xl bg-white border border-slate-200">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <User size={20} />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 mb-0.5">Ditulis oleh</p>
+                  <Link
+                    href={`/penulis/${author.slug}`}
+                    className="font-semibold text-slate-900 hover:text-primary transition-colors"
+                  >
+                    {author.name}
+                  </Link>
+                  <p className="text-xs text-slate-500 mb-2">{author.role}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {author.bio}
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-10">
             {article.tags.map((tag) => (
-              <span key={tag} className="flex items-center gap-1 text-xs px-3 py-1 bg-slate-100 text-slate-600 rounded-full">
-                <Tag size={10} />{tag}
+              <span
+                key={tag}
+                className="flex items-center gap-1 text-xs px-3 py-1 bg-slate-100 text-slate-600 rounded-full"
+              >
+                <Tag size={10} />
+                {tag}
               </span>
             ))}
           </div>
 
-          {/* Related */}
-          {relatedArticles.length > 0 && (
+          {/* Related articles */}
+          {related.length > 0 && (
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Artikel Terkait</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">
+                Artikel Terkait
+              </h2>
               <div className="grid sm:grid-cols-2 gap-4">
-                {relatedArticles.map((related) => (
-                  <Link key={related.slug} href={`/blog/${related.slug}`} className="p-4 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all">
-                    <h3 className="font-semibold text-sm text-slate-900 mb-1 line-clamp-2">{related.title}</h3>
-                    <p className="text-xs text-slate-500">{related.category} · {related.readTime}</p>
+                {related.map((rel) => (
+                  <Link
+                    key={rel.slug}
+                    href={`/blog/${rel.slug}`}
+                    className="p-4 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all"
+                  >
+                    <h3 className="font-semibold text-sm text-slate-900 mb-1 line-clamp-2">
+                      {rel.title}
+                    </h3>
+                    <p className="text-xs text-slate-500">
+                      {BLOG_CLUSTERS[rel.cluster].label} · {rel.readTime}
+                    </p>
                   </Link>
                 ))}
               </div>

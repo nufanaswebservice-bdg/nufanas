@@ -261,3 +261,122 @@ hanya dirender bila datanya ada.
 - `tsc` clean, `eslint` clean, build OK — 8 case study SSG.
 - Local: semua `/portfolio/<new-slug>` 200; 8 old slugs → 308; legacy bandung
   → direct `/jasa-*` (no chain). Sitemap: 86 URL, hanya slug baru.
+
+---
+
+# PHASE 4 — TOPICAL AUTHORITY & PEOPLE-FIRST CONTENT
+
+Status: **selesai diimplementasikan** (2026-10-06).
+
+## P4.1 — Temuan kunci audit blog
+
+Semua 50 artikel lama hanya memiliki metadata — body dirender oleh `generateContent()`
+di `src/app/blog/[slug]/page.tsx`, template identik untuk setiap artikel dengan
+klaim tanpa dasar: "revenue 2-3x lipat", "300+ project", harga generik. Ini klasifikasi
+**AI-like repetitive content** — seluruh fungsi generator dihapus dan digantikan
+konten unik per artikel.
+
+## P4.2 — Klasifikasi artikel (50 → 42)
+
+**B. Rewrite (34)** — slug dipertahankan, konten ditulis ulang penuh dari
+pengalaman project nyata:
+
+| Cluster | Artikel (slug) |
+|---|---|
+| Website (5) | jasa-pembuatan-website-panduan-lengkap, website-company-profile-pentingnya-untuk-bisnis, cara-membuat-website-toko-online, manfaat-website-untuk-umkm, perbedaan-website-dan-landing-page |
+| Aplikasi (11) | biaya-pembuatan-aplikasi-mobile-2025, jasa-pembuatan-aplikasi-android, cara-membuat-aplikasi-kasir-untuk-bisnis, aplikasi-inventory-management-panduan, erp-system-panduan-lengkap-untuk-bisnis, apa-itu-crm-dan-manfaatnya, hris-system-manajemen-sdm-modern, saas-development-panduan-membangun-produk, aplikasi-sekolah-e-learning-fitur-penting, cara-membuat-marketplace-online |
+| Teknologi (10) | next-js-vs-wordpress-mana-yang-lebih-baik, flutter-vs-react-native-mana-yang-terbaik, kotlin-vs-java-untuk-android-development, docker-kubernetes-untuk-deployment-aplikasi, optimasi-kecepatan-website-core-web-vitals, cara-optimasi-gambar-website-untuk-seo, pentingnya-ssl-untuk-website-bisnis, cara-memilih-hosting-terbaik-indonesia, cara-setup-google-analytics-4, cara-membuat-sitemap-xml-website |
+| Bisnis (4) | mengapa-bisnis-perlu-web-application, digital-agency-vs-freelancer-mana-yang-dipilih, cara-memilih-software-house, ui-ux-design-meningkatkan-conversion-rate, panduan-memilih-domain-website-bisnis |
+| Pemasaran (8) | apa-itu-seo-dan-manfaatnya-untuk-bisnis, jasa-seo-panduan-lengkap, local-seo-checklist-bisnis-lokal, cara-meningkatkan-traffic-website-organik, google-ads-vs-meta-ads-mana-yang-lebih-efektif, schema-markup-meningkatkan-ctr-google, geo-optimasi-ai-search-panduan-2025, ai-automation-untuk-bisnis-2025 |
+
+**A. Artikel baru (4)** — mengisi gap cluster + memperbaiki redirect target 404:
+`biaya-pembuatan-website`, `kapan-bisnis-membutuhkan-aplikasi`,
+`custom-software-vs-saas`, `panduan-website-per-industri`,
+`cara-memilih-software-house` (slug baru; redirect legacy
+`software-house-bandung-cara-memilih` kini valid).
+
+**C/D. Merge → 308 redirect (13)** — di `BLOG_REDIRECTS` (src/lib/blog-data.ts):
+
+| Slug lama (dihapus) | Tujuan | Alasan |
+|---|---|---|
+| website-klinik-fitur-yang-wajib-ada | panduan-website-per-industri | topik tipis, digabung per-industri |
+| website-hotel-meningkatkan-direct-booking | panduan-website-per-industri | idem |
+| website-rental-mobil-fitur-dan-tips | panduan-website-per-industri | idem |
+| website-cafe-restoran-meningkatkan-pelanggan | panduan-website-per-industri | idem |
+| website-properti-fitur-dan-strategi-seo | panduan-website-per-industri | idem |
+| cara-membuat-website-sekolah-yang-informatif | panduan-website-per-industri | idem |
+| cara-meningkatkan-seo-website-bisnis-lokal | local-seo-checklist-bisnis-lokal | duplikat local SEO |
+| cara-optimasi-google-my-business | local-seo-checklist-bisnis-lokal | duplikat local SEO |
+| content-marketing-strategi-untuk-website-bisnis | cara-meningkatkan-traffic-website-organik | overlap topik |
+| strategi-digital-marketing-untuk-umkm | cara-meningkatkan-traffic-website-organik | overlap topik |
+| chatgpt-untuk-bisnis-use-case-dan-implementasi | ai-automation-untuk-bisnis-2025 | duplikat AI-bisnis |
+| responsive-design-pentingnya-untuk-mobile | ui-ux-design-meningkatkan-conversion-rate | dicakup artikel UX |
+| tren-website-2025-yang-wajib-diketahui | /blog | thin listicle, outdated |
+
+## P4.3 — Content clusters (4 + SEO)
+
+```
+Cluster Website   (7 artikel)  → pillar /jasa-pembuatan-website
+Cluster Aplikasi  (12)         → pillar /jasa-pembuatan-aplikasi
+Cluster Teknologi (10)         → pillar /tentang (keahlian tim)
+Cluster Bisnis    (5)          → pillar /harga
+Cluster Pemasaran (8)          → pillar /layanan/jasa-seo
+```
+
+Setiap artikel punya satu `intent` primer (informational / commercial).
+
+## P4.4 — People-first signals
+
+- Intro answer-first + `keyTakeaways` per artikel (GEO-friendly).
+- Harga nyata dari `/harga` (bukan rentang generik).
+- Referensi project nyata: NuViral (SaaS), KaosDN99 (e-commerce),
+  Bimbel Kedinasan (e-learning), Portal Agatha (sistem informasi),
+  Teman Sejiwa (web app booking).
+- Framework keputusan, tabel perbandingan, pros/kontra — bukan listicle generik.
+- Author page `/penulis/tim-nufanas`: role, expertise stack nyata, project
+  nyata dari portfolio — tanpa kredensial karangan. `ProfilePage` schema.
+
+## P4.5 — Internal link graph
+
+```
+Blog artikel ──(relatedServices)──▶ /jasa-* pages
+     │                                    │
+     └──(relatedPortfolio)──▶ /portfolio/* ──(relatedServices)──▶ /jasa-*
+     │                                    │
+/jasa-pembuatan-website ◀──(relatedArticles)── jasa-* & /layanan/[slug]
+     └──▶ /blog index (cluster sections link ke pillar masing-masing)
+```
+
+- Artikel → layanan: blok "Layanan Terkait" + link kontekstual di body.
+- Artikel → portfolio: blok "Project Terkait" + anchor natural di body.
+- Pillar `/jasa-*` → artikel: `relatedArticles` (diperbarui ke slug baru).
+- Portfolio → layanan: blok Related Services (Phase 3).
+- `/blog` index: artikel dikelompokkan per cluster dengan link ke pillar.
+
+## P4.6 — Breadcrumbs
+
+- Artikel: Beranda > Blog > [Cluster] > Judul — visible + BreadcrumbList schema.
+- Penulis: Beranda > Blog > Tim Nufanas.
+- Layanan: Beranda > Layanan > [Service] (sudah ada sejak Phase 2).
+
+## P4.7 — Indexation & crawl report
+
+| Item | Status |
+|---|---|
+| Blog article pages | Indexable — 42 artikel unik, server-rendered |
+| `/penulis/[slug]` | Indexable — 1 author page |
+| Tag/filter pages | Tidak dibuat — tag hanya label visual (no URL) |
+| Category pill lama | Dihapus — diganti cluster sections, tanpa URL filter |
+| feed.xml | Hanya 42 artikel kurasi (top 20) |
+| sitemap-articles.xml | Hanya artikel valid; `lastmod` = `updated` |
+| Slug dihapus | 13 × 308 ke target kanonik — bukan 404 |
+| Canonical | Self-referencing di semua artikel |
+| Schema | Article + BreadcrumbList + FAQPage (conditional) + ProfilePage |
+| Boilerplate palsu | `generateContent` dihapus; klaim "300+ project"/"2-3x" hilang dari codebase |
+
+## P4.8 — Verification
+
+- `tsc` clean, `eslint` clean, `next build` OK (42 blog SSG + 1 penulis).
+- Local: semua route artikel/penulis 200; 13 redirect merge + legacy → 308.
+- Konten artikel berisi harga nyata, breadcrumb visible, author link, schema.
+- Slug terhapus tidak ada di sitemap; tidak ada referensi slug lama di src/.
