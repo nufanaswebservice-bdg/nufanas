@@ -146,7 +146,6 @@ const portfolioIds = [
   "nuviral-ai-studio",
   "teman-sejiwa",
   "portal-agatha",
-  "crm-dashboard",
   "kaosdn99-ecommerce",
 ];
 
