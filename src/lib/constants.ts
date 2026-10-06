@@ -54,8 +54,7 @@ export const NAP = {
     linkedin: "https://linkedin.com/company/nufanas",
     facebook: "https://facebook.com/nufanas",
     twitter: "https://twitter.com/nufanas",
-    youtube: "https://youtube.com/@nufanas",
-    github: "https://github.com/nufanas",
+    github: "https://github.com/nufanaswebservice-bdg",
   },
 } as const;
 

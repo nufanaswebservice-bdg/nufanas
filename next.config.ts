@@ -92,6 +92,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Canonical host: www → apex (301)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.nufanas.com" }],
+        destination: "https://nufanas.com/:path*",
+        permanent: true,
+      },
       ...Object.entries(LAYANAN_TO_JASA).map(([slug, destination]) => ({
         source: `/layanan/${slug}`,
         destination,

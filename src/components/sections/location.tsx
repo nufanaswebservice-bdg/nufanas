@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { MapPin, Video, MessageCircle } from "lucide-react";
 import { NAP, ENTITIES } from "@/lib/constants";
 
@@ -8,7 +8,7 @@ export function LocationSection() {
   return (
     <section className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -24,11 +24,11 @@ export function LocationSection() {
             desain, development, hingga serah terima — dapat dilakukan 100%
             remote untuk client di semua kota di Indonesia.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Map kantor */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -44,10 +44,10 @@ export function LocationSection() {
               referrerPolicy="no-referrer-when-downgrade"
               title="Kantor Nufanas — Jasa Pembuatan Website & Aplikasi"
             />
-          </motion.div>
+          </m.div>
 
           {/* Info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -112,7 +112,7 @@ export function LocationSection() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

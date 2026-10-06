@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import {
   Globe,
@@ -37,7 +37,7 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,12 +53,12 @@ export function ServicesSection() {
             software — satu tim untuk seluruh kebutuhan digital bisnis Anda di
             mana pun di Indonesia.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICE_CATEGORIES.map((service, index) => (
-            <motion.div
+            <m.div
               key={service.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -82,11 +82,11 @@ export function ServicesSection() {
                   Selengkapnya <ArrowRight size={14} />
                 </div>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
 
           {/* CTA card mengisi grid ke-6 */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -108,7 +108,7 @@ export function ServicesSection() {
                 Konsultasi Gratis <ArrowRight size={14} />
               </div>
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -16,6 +16,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/faq`,
   },
+
+  openGraph: {
+    title: "FAQ — Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Jawaban lengkap tentang biaya, timeline, proses, dan layanan jasa pembuatan website dan aplikasi custom Nufanas.",
+    url: `${SITE_CONFIG.url}/faq`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Jawaban lengkap tentang biaya, timeline, proses, dan layanan jasa pembuatan website dan aplikasi custom Nufanas.",
+  },
 };
 
 export default function FAQPage() {

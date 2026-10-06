@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { TECHNOLOGIES } from "@/lib/constants";
 
 export function TechnologySection() {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,11 +25,11 @@ export function TechnologySection() {
             app, dan enterprise software dengan performa tinggi dan scalability
             yang baik.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {TECHNOLOGIES.map((tech, index) => (
-            <motion.div
+            <m.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -40,7 +40,7 @@ export function TechnologySection() {
             >
               <p className="font-semibold text-sm mb-1 text-slate-900">{tech.name}</p>
               <p className="text-xs text-slate-500">{tech.category}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

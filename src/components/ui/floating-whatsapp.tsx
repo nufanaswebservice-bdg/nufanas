@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { NAP } from "@/lib/constants";
 
 export function FloatingWhatsApp() {
@@ -17,7 +17,7 @@ export function FloatingWhatsApp() {
     <div className="fixed bottom-6 right-6 z-50">
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -45,11 +45,11 @@ export function FloatingWhatsApp() {
                 Mulai Chat
               </a>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
-      <motion.button
+      <m.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -57,7 +57,7 @@ export function FloatingWhatsApp() {
         aria-label={isOpen ? "Tutup chat WhatsApp" : "Buka chat WhatsApp"}
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
-      </motion.button>
+      </m.button>
     </div>
   );
 }

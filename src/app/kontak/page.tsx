@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/kontak`,
   },
+
+  openGraph: {
+    title: "Kontak — Konsultasi Gratis Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Hubungi Nufanas untuk konsultasi gratis jasa pembuatan website dan aplikasi custom. Melayani seluruh Indonesia, respon cepat via WhatsApp.",
+    url: `${SITE_CONFIG.url}/kontak`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kontak — Konsultasi Gratis Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Hubungi Nufanas untuk konsultasi gratis jasa pembuatan website dan aplikasi custom. Melayani seluruh Indonesia, respon cepat via WhatsApp.",
+  },
 };
 
 export default function ContactPage() {

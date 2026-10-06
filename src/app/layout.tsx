@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { PromoPopup } from "@/components/ui/promo-popup";
+import { MotionProvider } from "@/components/providers/motion-provider";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   generateOrganizationSchema,
@@ -89,6 +90,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jakarta.variable} font-sans antialiased`}
       >
+        <a href="#main-content" className="skip-link">
+          Lewati ke konten utama
+        </a>
         {/* Google Tag (gtag.js) - Google Analytics & Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TD4NKD79DS"
@@ -106,11 +110,15 @@ export default function RootLayout({
         <JsonLd data={generateOrganizationSchema()} />
         <JsonLd data={generateLocalBusinessSchema()} />
         <JsonLd data={generateWebsiteSchema()} />
-        <Navbar />
-        <main className="min-h-screen overflow-x-hidden">{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
-        <PromoPopup />
+        <MotionProvider>
+          <Navbar />
+          <main id="main-content" className="min-h-screen overflow-x-hidden">
+            {children}
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+          <PromoPopup />
+        </MotionProvider>
       </body>
     </html>
   );

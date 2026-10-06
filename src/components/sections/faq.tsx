@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateFAQSchema } from "@/lib/schema";
@@ -14,7 +14,7 @@ export function FAQSection() {
     <section className="py-20 sm:py-24 bg-slate-50/60" id="faq">
       <JsonLd data={generateFAQSchema(HOME_FAQS)} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -29,11 +29,11 @@ export function FAQSection() {
             Jawaban untuk pertanyaan umum tentang jasa pembuatan website dan
             aplikasi di Nufanas.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-3">
           {HOME_FAQS.map((faq, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export function FAQSection() {
               </button>
               <AnimatePresence>
                 {openIndex === index && (
-                  <motion.div
+                  <m.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -68,10 +68,10 @@ export function FAQSection() {
                     <div className="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
                       {faq.answer}
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

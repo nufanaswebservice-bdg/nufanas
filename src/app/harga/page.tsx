@@ -13,6 +13,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/harga`,
   },
+
+  openGraph: {
+    title: "Harga Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Harga jasa pembuatan website mulai Rp 1.500.000 dan aplikasi mulai Rp 15.000.000. Termasuk domain, hosting, SSL, dan SEO.",
+    url: `${SITE_CONFIG.url}/harga`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Harga Jasa Pembuatan Website & Aplikasi | Nufanas",
+    description:
+      "Harga jasa pembuatan website mulai Rp 1.500.000 dan aplikasi mulai Rp 15.000.000. Termasuk domain, hosting, SSL, dan SEO.",
+  },
 };
 
 export default function PricingPage() {

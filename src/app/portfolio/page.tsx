@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/portfolio`,
   },
+
+  openGraph: {
+    title: "Portfolio — Hasil Karya Website & Aplikasi | Nufanas",
+    description:
+      "Lihat portfolio website, aplikasi mobile, web application, dan enterprise software yang telah kami buat untuk bisnis di seluruh Indonesia.",
+    url: `${SITE_CONFIG.url}/portfolio`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio — Hasil Karya Website & Aplikasi | Nufanas",
+    description:
+      "Lihat portfolio website, aplikasi mobile, web application, dan enterprise software yang telah kami buat untuk bisnis di seluruh Indonesia.",
+  },
 };
 
 export default function PortfolioPage() {

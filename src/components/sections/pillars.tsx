@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { Globe, Smartphone, ArrowRight } from "lucide-react";
 
@@ -43,7 +43,7 @@ export function PillarsSection() {
   return (
     <section className="py-20 sm:py-24 bg-slate-50/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,11 +59,11 @@ export function PillarsSection() {
             aplikasi yang mengotomasi — tim yang sama menanganinya dengan
             standar yang sama.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid lg:grid-cols-2 gap-6">
           {pillars.map((pillar, i) => (
-            <motion.div
+            <m.div
               key={pillar.href}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export function PillarsSection() {
                   Pelajari Layanan <ArrowRight size={15} />
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

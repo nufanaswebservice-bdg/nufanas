@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Star, MessageCircle, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,7 +24,7 @@ export function HeroSection() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left Content */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -75,7 +75,7 @@ export function HeroSection() {
                 { value: "5+", label: "Tahun" },
                 { value: "34", label: "Provinsi" },
               ].map((stat, i) => (
-                <motion.div
+                <m.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -88,13 +88,13 @@ export function HeroSection() {
                   <p className="text-[10px] sm:text-sm text-slate-500">
                     {stat.label}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right — browser mockup dengan screenshot project asli */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -122,7 +122,7 @@ export function HeroSection() {
             </div>
 
             {/* Floating glass chips */}
-            <motion.div
+            <m.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-4 left-4 sm:-left-4 glass-light rounded-xl shadow-lg p-3 sm:p-4 border border-slate-200/60"
@@ -140,9 +140,9 @@ export function HeroSection() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 3.5,
@@ -165,12 +165,12 @@ export function HeroSection() {
                   </p>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
 
         {/* Trusted By */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
@@ -196,7 +196,7 @@ export function HeroSection() {
               </span>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

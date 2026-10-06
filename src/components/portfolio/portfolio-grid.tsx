@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Eye, ExternalLink, TrendingUp, MessageCircle } from "lucide-react";
 import { PORTFOLIO_ITEMS, PORTFOLIO_CATEGORIES } from "@/lib/portfolio-data";
 import { NAP } from "@/lib/constants";
@@ -54,10 +54,10 @@ export function PortfolioGrid() {
 
       {/* Grid */}
       {filteredItems.length > 0 ? (
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <m.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
-              <motion.div
+              <m.div
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -134,10 +134,10 @@ export function PortfolioGrid() {
                     )}
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
       ) : (
         /* Honest empty state — no fake projects */
         <div className="text-center py-16 rounded-2xl border border-dashed border-slate-300 bg-slate-50">

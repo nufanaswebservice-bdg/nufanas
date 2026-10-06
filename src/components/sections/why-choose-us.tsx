@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Zap,
   Shield,
@@ -53,7 +53,7 @@ export function WhyChooseUsSection() {
   return (
     <section className="py-20 sm:py-24 bg-slate-50/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -69,11 +69,11 @@ export function WhyChooseUsSection() {
             bisnis di seluruh Indonesia — dikerjakan tim in-house dengan proses
             yang transparan.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((reason, index) => (
-            <motion.div
+            <m.div
               key={reason.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export function WhyChooseUsSection() {
               <p className="text-slate-600 text-sm leading-relaxed">
                 {reason.description}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import {
   Building,
@@ -40,7 +40,7 @@ export function IndustriesSection() {
   return (
     <section className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,11 +55,11 @@ export function IndustriesSection() {
             Kami berpengalaman membangun website, mobile app, dan enterprise
             software untuk berbagai industri di seluruh Indonesia.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {industries.map((industry, index) => (
-            <motion.div
+            <m.div
               key={industry.name}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export function IndustriesSection() {
                   {industry.name}
                 </span>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

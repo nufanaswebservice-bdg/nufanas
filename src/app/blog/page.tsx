@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description:
     "Panduan praktis seputar pembuatan website, aplikasi, custom software, dan teknologi — ditulis dari pengalaman project nyata oleh tim Nufanas.",
   alternates: { canonical: `${SITE_CONFIG.url}/blog` },
+
+  openGraph: {
+    title: "Blog — Panduan Website, Aplikasi & Teknologi | Nufanas",
+    description:
+      "Panduan praktis seputar pembuatan website, aplikasi, custom software, dan teknologi — ditulis dari pengalaman project nyata.",
+    url: `${SITE_CONFIG.url}/blog`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — Panduan Website, Aplikasi & Teknologi | Nufanas",
+    description:
+      "Panduan praktis seputar pembuatan website, aplikasi, custom software, dan teknologi — ditulis dari pengalaman project nyata.",
+  },
 };
 
 const CLUSTER_ORDER: BlogCluster[] = [

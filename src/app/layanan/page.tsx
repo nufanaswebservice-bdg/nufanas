@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/layanan`,
   },
+
+  openGraph: {
+    title: "Layanan — Jasa Pembuatan Website, Aplikasi & Custom Software | Nufanas",
+    description:
+      "Layanan lengkap Nufanas: jasa pembuatan website, aplikasi mobile, web application, custom software, sistem informasi, dan SEO.",
+    url: `${SITE_CONFIG.url}/layanan`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Layanan — Jasa Pembuatan Website, Aplikasi & Custom Software | Nufanas",
+    description:
+      "Layanan lengkap Nufanas: jasa pembuatan website, aplikasi mobile, web application, custom software, sistem informasi, dan SEO.",
+  },
 };
 
 const groups = [

@@ -13,9 +13,13 @@ module.exports = {
     "/icon.png",
     "/opengraph-image",
     "/twitter-image",
+    "*/opengraph-image",
+    "*/twitter-image",
     "/feed.xml",
     "/sitemap-articles.xml",
     "/manifest.json",
+    // Blog articles are covered by sitemap-articles.xml (avoid duplication)
+    "/blog/*",
   ],
   robotsTxtOptions: {
     additionalSitemaps: ["https://nufanas.com/sitemap-articles.xml"],

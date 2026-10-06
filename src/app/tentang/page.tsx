@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_CONFIG.url}/tentang`,
   },
+
+  openGraph: {
+    title: "Tentang Nufanas — Software House Indonesia | Nufanas",
+    description:
+      "Nufanas adalah software house yang melayani jasa pembuatan website dan aplikasi custom untuk bisnis di seluruh Indonesia sejak 2019.",
+    url: `${SITE_CONFIG.url}/tentang`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tentang Nufanas — Software House Indonesia | Nufanas",
+    description:
+      "Nufanas adalah software house yang melayani jasa pembuatan website dan aplikasi custom untuk bisnis di seluruh Indonesia sejak 2019.",
+  },
 };
 
 export default function AboutPage() {
