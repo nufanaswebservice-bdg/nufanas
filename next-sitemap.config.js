@@ -6,7 +6,17 @@ module.exports = {
   changefreq: "weekly",
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ["/admin/*", "/api/*"],
+  exclude: [
+    "/admin/*",
+    "/api/*",
+    "/apple-icon.png",
+    "/icon.png",
+    "/opengraph-image",
+    "/twitter-image",
+    "/feed.xml",
+    "/sitemap-articles.xml",
+    "/manifest.json",
+  ],
   robotsTxtOptions: {
     additionalSitemaps: ["https://nufanas.com/sitemap-articles.xml"],
     policies: [

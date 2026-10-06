@@ -1,30 +1,8 @@
 import { SITE_CONFIG } from "@/lib/constants";
-
-const articles = [
-  {
-    slug: "jasa-pembuatan-website-bandung-panduan-lengkap",
-    title: "Jasa Pembuatan Website Bandung: Panduan Lengkap 2024",
-    description:
-      "Panduan lengkap memilih jasa pembuatan website terbaik di Bandung.",
-    date: "2024-12-01",
-  },
-  {
-    slug: "cara-meningkatkan-seo-website-bisnis-lokal",
-    title: "Cara Meningkatkan SEO Website untuk Bisnis Lokal Bandung",
-    description:
-      "Strategi SEO lokal yang terbukti efektif untuk bisnis di Bandung.",
-    date: "2024-11-15",
-  },
-  {
-    slug: "website-company-profile-pentingnya-untuk-bisnis",
-    title: "Website Company Profile: Mengapa Penting untuk Bisnis?",
-    description:
-      "Alasan mengapa setiap bisnis perlu memiliki website company profile.",
-    date: "2024-11-01",
-  },
-];
+import { BLOG_ARTICLES } from "@/lib/blog-data";
 
 export async function GET() {
+  const items = BLOG_ARTICLES.slice(0, 20);
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -34,7 +12,7 @@ export async function GET() {
     <language>id</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_CONFIG.url}/feed.xml" rel="self" type="application/rss+xml"/>
-    ${articles
+    ${items
       .map(
         (article) => `
     <item>

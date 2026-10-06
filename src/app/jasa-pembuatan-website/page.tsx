@@ -64,81 +64,81 @@ const websiteTypes = [
     title: "Website Company Profile",
     description:
       "Website resmi perusahaan untuk membangun kredibilitas: profil bisnis, layanan, tim, portfolio, dan kontak. Wajah digital perusahaan Anda yang bekerja 24 jam.",
-    href: "/layanan/website-company-profile-bandung",
+    href: "/layanan/website-company-profile",
   },
   {
     icon: <Store size={22} />,
     title: "Website UMKM",
     description:
       "Paket website terjangkau untuk usaha kecil dan menengah: katalog produk, tombol WhatsApp, peta lokasi, dan halaman promo yang mudah dikelola.",
-    href: "/layanan/website-umkm-bandung",
+    href: "/layanan/website-umkm",
   },
   {
     icon: <ShoppingCart size={22} />,
     title: "Website E-Commerce / Toko Online",
     description:
       "Toko online dengan katalog produk, keranjang belanja, checkout multi-payment gateway, ongkir otomatis, dan order tracking untuk pelanggan.",
-    href: "/layanan/website-toko-online-bandung",
+    href: "/layanan/website-ecommerce",
   },
   {
     icon: <Globe size={22} />,
     title: "Website Corporate & Industri",
     description:
       "Website korporat dan manufaktur dengan struktur halaman lengkap: tentang perusahaan, lini bisnis, sertifikasi, karier, dan investor relations.",
-    href: "/layanan/website-industri-bandung",
+    href: "/layanan/website-company-profile",
   },
   {
     icon: <Users size={22} />,
     title: "Website Organisasi & Komunitas",
     description:
       "Portal untuk yayasan, komunitas, dan organisasi: manajemen anggota, agenda kegiatan, galeri, donasi, dan pengumuman resmi.",
-    href: "/layanan/jasa-web-application-bandung",
+    href: "/layanan/web-application",
   },
   {
     icon: <GraduationCap size={22} />,
     title: "Website Sekolah & Pendidikan",
     description:
       "Website sekolah dan lembaga kursus: profil program, pendaftaran online (PPDB), berita kegiatan, e-learning, dan portal informasi siswa.",
-    href: "/layanan/website-sekolah-bandung",
+    href: "/layanan/website-custom",
   },
   {
     icon: <Plane size={22} />,
     title: "Website Travel & Tour",
     description:
       "Website agen travel dengan katalog paket wisata, itinerary, booking form, galeri destinasi, dan testimoni peserta tour.",
-    href: "/layanan/website-travel-bandung",
+    href: "/layanan/website-booking",
   },
   {
     icon: <Car size={22} />,
     title: "Website Otomotif & Rental",
     description:
       "Website rental mobil dan bisnis otomotif: katalog armada, harga sewa, booking online, syarat rental, dan integrasi WhatsApp.",
-    href: "/layanan/website-rental-mobil-bandung",
+    href: "/layanan/website-booking",
   },
   {
     icon: <Code size={22} />,
     title: "Website Custom",
     description:
       "Website yang dibangun dari nol sesuai kebutuhan spesifik bisnis Anda — bukan template. Desain, fitur, dan alur disesuaikan dengan proses bisnis.",
-    href: "/layanan/jasa-pembuatan-website-bandung",
+    href: "/layanan/website-custom",
   },
   {
     icon: <LayoutDashboard size={22} />,
     title: "Web Application",
     description:
       "Aplikasi berbasis web dengan login, database, dashboard, dan logika bisnis kompleks — bukan sekadar website tampilan.",
-    href: "/layanan/jasa-web-application-bandung",
+    href: "/layanan/web-application",
   },
 ];
 
 const otherWebsiteTypes = [
-  { label: "website hotel", href: "/layanan/website-hotel-bandung" },
-  { label: "website klinik", href: "/layanan/website-klinik-bandung" },
-  { label: "website cafe & restoran", href: "/layanan/website-cafe-bandung" },
-  { label: "website kontraktor", href: "/layanan/website-kontraktor-bandung" },
-  { label: "website properti", href: "/layanan/website-properti-bandung" },
-  { label: "website furniture", href: "/layanan/website-furniture-bandung" },
-  { label: "landing page", href: "/layanan/landing-page-bandung" },
+  { label: "website hotel", href: "/layanan/website-booking" },
+  { label: "website klinik", href: "/layanan/website-booking" },
+  { label: "website cafe & restoran", href: "/layanan/website-custom" },
+  { label: "website kontraktor", href: "/layanan/website-company-profile" },
+  { label: "website properti", href: "/layanan/website-custom" },
+  { label: "website furniture", href: "/layanan/website-ecommerce" },
+  { label: "landing page", href: "/layanan/landing-page" },
 ];
 
 const portfolioIds = [
@@ -152,8 +152,8 @@ const portfolioIds = [
 
 const relatedArticles = [
   {
-    slug: "jasa-pembuatan-website-bandung-panduan-lengkap",
-    title: "Jasa Pembuatan Website Bandung: Panduan Lengkap",
+    slug: "jasa-pembuatan-website-panduan-lengkap",
+    title: "Jasa Pembuatan Website: Panduan Lengkap",
   },
   {
     slug: "next-js-vs-wordpress-mana-yang-lebih-baik",
@@ -224,9 +224,9 @@ const faqs = [
       "Ya. Kami menerapkan technical SEO sejak development: HTML semantik, metadata lengkap, canonical URL, sitemap XML, structured data, optimasi gambar, dan kecepatan loading. Ini membangun fondasi yang baik untuk SEO — meski perlu dicatat ranking di Google juga dipengaruhi konten dan faktor eksternal lainnya.",
   },
   {
-    question: "Apakah Nufanas melayani pembuatan website di luar Bandung?",
+    question: "Apakah Nufanas melayani pembuatan website di seluruh Indonesia?",
     answer:
-      "Ya. Kami berbasis di Bandung tetapi melayani klien di seluruh Indonesia — Jakarta, Surabaya, dan kota lainnya. Konsultasi dan koordinasi project dapat dilakukan remote via WhatsApp dan video call.",
+      "Ya. Kami melayani klien di seluruh Indonesia — Jakarta, Surabaya, Medan, Makassar, dan kota lainnya. Konsultasi dan koordinasi project dapat dilakukan 100% remote via WhatsApp dan video call.",
   },
 ];
 
@@ -475,19 +475,19 @@ export default function JasaPembuatanWebsitePage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/layanan/jasa-pembuatan-website-bandung"
+                  href="/layanan/website-custom"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Website Custom <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="/layanan/jasa-web-application-bandung"
+                  href="/layanan/web-application"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Web Application <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="/layanan/jasa-custom-software-bandung"
+                  href="/layanan/custom-software"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-primary/50 transition-all"
                 >
                   Custom Software <ArrowRight size={14} />
@@ -752,9 +752,9 @@ export default function JasaPembuatanWebsitePage() {
                   <li className="flex gap-2">
                     <Check size={16} className="text-primary shrink-0 mt-1" />
                     <span>
-                      <strong>Melayani seluruh Indonesia</strong> — berbasis di
-                      Bandung, terbiasa bekerja remote dengan klien dari
-                      berbagai kota.
+                      <strong>Melayani seluruh Indonesia</strong> — terbiasa
+                      bekerja remote dengan klien dari berbagai kota, dengan
+                      proses dan dokumentasi yang rapi.
                     </span>
                   </li>
                 </ul>
@@ -792,7 +792,7 @@ export default function JasaPembuatanWebsitePage() {
           </div>
         </section>
 
-        {/* Area + Bandung differentiation */}
+        {/* Area */}
         <section className="mb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200">
@@ -800,18 +800,11 @@ export default function JasaPembuatanWebsitePage() {
                 Melayani Pembuatan Website di Seluruh Indonesia
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Kantor kami berada di Bandung, namun project dikerjakan remote
-                untuk klien di Jakarta, Surabaya, Yogyakarta, Medan, Bali, dan
-                kota lainnya. Khusus untuk kebutuhan lokal, kami memiliki
-                halaman{" "}
-                <Link
-                  href="/layanan/jasa-pembuatan-website-bandung"
-                  className="text-primary hover:underline"
-                >
-                  jasa pembuatan website Bandung
-                </Link>{" "}
-                dengan layanan tatap muka. Untuk kebutuhan aplikasi mobile dan
-                sistem, lihat juga layanan{" "}
+                Project dikerjakan remote untuk klien di Jakarta, Surabaya,
+                Yogyakarta, Medan, Bali, dan seluruh kota di Indonesia —
+                koordinasi via WhatsApp, meeting online, dan update progres
+                berkala. Untuk kebutuhan aplikasi mobile dan sistem, lihat juga
+                layanan{" "}
                 <Link
                   href="/jasa-pembuatan-aplikasi"
                   className="text-primary hover:underline"

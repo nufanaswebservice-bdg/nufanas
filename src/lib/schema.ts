@@ -28,6 +28,10 @@ export function generateOrganizationSchema() {
       latitude: NAP.geo.latitude,
       longitude: NAP.geo.longitude,
     },
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
     telephone: NAP.phone,
     email: NAP.email,
     sameAs: Object.values(NAP.socialMedia),
@@ -71,12 +75,8 @@ export function generateLocalBusinessSchema() {
       closes: h.close,
     })),
     areaServed: {
-      "@type": "City",
-      name: "Bandung",
-      containedInPlace: {
-        "@type": "State",
-        name: "Jawa Barat",
-      },
+      "@type": "Country",
+      name: "Indonesia",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -88,7 +88,28 @@ export function generateLocalBusinessSchema() {
             "@type": "Service",
             name: "Jasa Pembuatan Website",
             description:
-              "Pembuatan website profesional untuk bisnis di Bandung dan Jawa Barat",
+              "Jasa pembuatan website profesional dan custom untuk bisnis di seluruh Indonesia",
+            url: `${SITE_CONFIG.url}/jasa-pembuatan-website`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Jasa Pembuatan Aplikasi",
+            description:
+              "Jasa pembuatan aplikasi Android, iOS, mobile, dan web application custom",
+            url: `${SITE_CONFIG.url}/jasa-pembuatan-aplikasi`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom Software Development",
+            description:
+              "Pengembangan software custom: sistem informasi, ERP, CRM, dan platform SaaS",
+            url: `${SITE_CONFIG.url}/layanan/custom-software`,
           },
         },
         {
@@ -97,16 +118,8 @@ export function generateLocalBusinessSchema() {
             "@type": "Service",
             name: "Jasa SEO",
             description:
-              "Optimasi mesin pencari untuk meningkatkan ranking website di Google",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Digital Marketing",
-            description:
-              "Strategi pemasaran digital termasuk Google Ads, Meta Ads, dan branding",
+              "Optimasi mesin pencari untuk meningkatkan ranking website di Google Indonesia",
+            url: `${SITE_CONFIG.url}/layanan/jasa-seo`,
           },
         },
       ],
@@ -149,6 +162,7 @@ export function generateServiceSchema(service: {
   description: string;
   slug: string;
   price?: string;
+  serviceType?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -161,10 +175,10 @@ export function generateServiceSchema(service: {
       "@id": `${SITE_CONFIG.url}/#organization`,
     },
     areaServed: {
-      "@type": "City",
-      name: "Bandung",
+      "@type": "Country",
+      name: "Indonesia",
     },
-    serviceType: "Web Development",
+    serviceType: service.serviceType || "Web Development",
   };
 }
 

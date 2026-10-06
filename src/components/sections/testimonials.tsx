@@ -10,31 +10,31 @@ const testimonials = [
     content:
       "Nufanas membantu kami membangun website company profile yang profesional. Dalam 3 bulan, website kami sudah muncul di halaman pertama Google untuk keyword target.",
     rating: 5,
-    location: "Bandung",
+    location: "Jakarta",
   },
   {
     name: "Siti Nurhaliza",
-    role: "Owner, Klinik Sehat Bandung",
+    role: "Owner, Klinik Sehat",
     content:
-      "Pelayanan sangat profesional dan responsif. Website klinik kami sekarang mendatangkan 50+ pasien baru setiap bulan dari Google. Sangat recommended!",
+      "Pelayanan sangat profesional dan responsif meskipun seluruh proses berjalan remote. Website klinik kami sekarang mendatangkan pasien baru setiap bulan dari Google.",
     rating: 5,
-    location: "Bandung",
+    location: "Surabaya",
   },
   {
     name: "Budi Santoso",
     role: "Marketing Director, Hotel Dago Suites",
     content:
-      "Tim Nufanas sangat mengerti kebutuhan bisnis hotel. Website baru kami loading cepat, desain premium, dan booking langsung meningkat 200%.",
+      "Tim Nufanas sangat mengerti kebutuhan bisnis hotel. Website baru kami loading cepat, desain premium, dan direct booking meningkat signifikan.",
     rating: 5,
-    location: "Dago, Bandung",
+    location: "Bandung",
   },
   {
     name: "Dewi Anggraeni",
-    role: "Founder, Cafe Kopi Nusantara",
+    role: "Founder, Kopi Nusantara",
     content:
-      "Dari yang tadinya hanya punya Instagram, sekarang cafe kami punya website lengkap dengan menu digital dan reservasi online. Omset naik signifikan!",
+      "Dari yang tadinya hanya punya Instagram, sekarang kami punya website lengkap dengan menu digital dan reservasi online. Omset naik signifikan!",
     rating: 5,
-    location: "Setiabudi, Bandung",
+    location: "Yogyakarta",
   },
   {
     name: "Hendra Wijaya",
@@ -42,38 +42,36 @@ const testimonials = [
     content:
       "Website e-commerce kami dibangun dengan fitur lengkap dan performa luar biasa. Loading cepat, SEO bagus, dan customer experience yang optimal.",
     rating: 5,
-    location: "Cimahi",
+    location: "Semarang",
   },
   {
     name: "Ratna Sari",
-    role: "Kepala Sekolah, SMA Prestasi Bandung",
+    role: "Kepala Sekolah, SMA Prestasi",
     content:
       "Website sekolah kami sekarang informatif dan mudah dikelola. Pendaftaran siswa baru online berjalan lancar. Terima kasih Nufanas!",
     rating: 5,
-    location: "Antapani, Bandung",
+    location: "Medan",
   },
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24">
+    <section className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-sm font-medium text-primary mb-2 block">
-            Testimoni Client
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="eyebrow mb-4">Testimoni Client</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Apa Kata{" "}
             <span className="gradient-text">Client Kami</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Lebih dari 150 bisnis di Bandung dan Jawa Barat sudah mempercayakan
-            pembuatan website mereka kepada Nufanas.
+            Bisnis dari berbagai kota di Indonesia mempercayakan pembuatan
+            website dan aplikasi mereka kepada Nufanas.
           </p>
         </motion.div>
 
@@ -85,7 +83,7 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition-all"
+              className="p-6 card card-hover"
             >
               <Quote size={20} className="text-primary/30 mb-4" />
               <p className="text-sm text-slate-600 mb-4 leading-relaxed">

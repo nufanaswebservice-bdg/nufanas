@@ -62,84 +62,84 @@ const appTypes = [
     title: "Aplikasi Android",
     description:
       "Aplikasi Android native (Kotlin) atau cross-platform (Flutter/React Native) yang di-publish ke Google Play Store dengan performa optimal.",
-    href: "/layanan/jasa-aplikasi-android-bandung",
+    href: "/layanan/aplikasi-android",
   },
   {
     icon: <Smartphone size={22} />,
     title: "Aplikasi iOS",
     description:
       "Aplikasi iPhone dan iPad dengan Swift atau cross-platform — satu codebase yang juga menghasilkan versi Android sekaligus.",
-    href: "/layanan/jasa-aplikasi-ios-bandung",
+    href: "/layanan/aplikasi-ios",
   },
   {
     icon: <Smartphone size={22} />,
     title: "Aplikasi Mobile Cross-Platform",
     description:
       "Flutter atau React Native untuk menjangkau pengguna Android dan iOS sekaligus — lebih hemat biaya dan waktu dibanding dua codebase terpisah.",
-    href: "/layanan/jasa-aplikasi-mobile-bandung",
+    href: "/layanan/aplikasi-mobile",
   },
   {
     icon: <Globe size={22} />,
     title: "Web Application",
     description:
       "Aplikasi berbasis web yang berjalan di browser: sistem informasi, portal, dan platform dengan login, database, dan dashboard.",
-    href: "/layanan/jasa-web-application-bandung",
+    href: "/layanan/web-application",
   },
   {
     icon: <Building size={22} />,
     title: "Aplikasi Bisnis & Sistem Informasi",
     description:
       "Sistem informasi manajemen untuk mengotomasi proses operasional: data terpusat, laporan otomatis, dan alur kerja yang jelas.",
-    href: "/layanan/jasa-sistem-informasi-bandung",
+    href: "/layanan/sistem-informasi",
   },
   {
     icon: <Code size={22} />,
     title: "Aplikasi & Software Custom",
     description:
       "Software yang dirancang khusus mengikuti proses bisnis Anda — bukan memaksa bisnis menyesuaikan software jadi.",
-    href: "/layanan/jasa-custom-software-bandung",
+    href: "/layanan/custom-software",
   },
   {
     icon: <Cloud size={22} />,
     title: "Platform SaaS",
     description:
       "Produk Software as a Service multi-tenant: subscription, billing, onboarding pengguna, dan arsitektur yang siap scale.",
-    href: "/layanan/jasa-saas-bandung",
+    href: "/layanan/custom-software",
   },
   {
     icon: <BarChart size={22} />,
     title: "Dashboard & Admin System",
     description:
       "Dashboard analytics dan business intelligence: visualisasi data real-time, reporting, dan monitoring operasional dalam satu layar.",
-    href: "/layanan/jasa-dashboard-bandung",
+    href: "/layanan/web-application",
   },
   {
     icon: <Store size={22} />,
     title: "Marketplace & Platform E-Commerce",
     description:
       "Platform marketplace multi-vendor atau aplikasi e-commerce custom dengan payment gateway, split payment, dan manajemen vendor.",
-    href: "/layanan/jasa-marketplace-bandung",
+    href: "/layanan/web-application",
   },
   {
     icon: <Brain size={22} />,
     title: "Aplikasi Berbasis AI",
     description:
       "Aplikasi dengan fitur AI: content generation, chatbot, image/video AI, dan otomasi cerdas menggunakan model AI terkini.",
-    href: "/layanan/jasa-aplikasi-ai-bandung",
+    href: "/layanan/aplikasi-ai",
   },
 ];
 
 const otherAppTypes = [
-  { label: "ERP", href: "/layanan/jasa-erp-bandung" },
-  { label: "CRM", href: "/layanan/jasa-crm-bandung" },
-  { label: "HRIS", href: "/layanan/jasa-hris-bandung" },
-  { label: "POS", href: "/layanan/jasa-pos-bandung" },
-  { label: "aplikasi kasir", href: "/layanan/jasa-aplikasi-kasir-bandung" },
-  { label: "aplikasi inventory", href: "/layanan/jasa-aplikasi-inventory-bandung" },
-  { label: "aplikasi klinik", href: "/layanan/jasa-aplikasi-klinik-bandung" },
-  { label: "aplikasi sekolah", href: "/layanan/jasa-aplikasi-sekolah-bandung" },
-  { label: "aplikasi hotel", href: "/layanan/jasa-aplikasi-hotel-bandung" },
-  { label: "aplikasi travel", href: "/layanan/jasa-aplikasi-travel-bandung" },
+  { label: "ERP", href: "/layanan/sistem-informasi" },
+  { label: "CRM", href: "/layanan/sistem-informasi" },
+  { label: "HRIS", href: "/layanan/sistem-informasi" },
+  { label: "POS", href: "/layanan/aplikasi-bisnis" },
+  { label: "aplikasi kasir", href: "/layanan/aplikasi-bisnis" },
+  { label: "aplikasi inventory", href: "/layanan/aplikasi-bisnis" },
+  { label: "aplikasi klinik", href: "/layanan/aplikasi-bisnis" },
+  { label: "aplikasi sekolah", href: "/layanan/aplikasi-bisnis" },
+  { label: "aplikasi hotel", href: "/layanan/website-booking" },
+  { label: "aplikasi travel", href: "/layanan/website-booking" },
 ];
 
 const portfolioIds = [
@@ -156,7 +156,7 @@ const relatedArticles = [
     title: "Biaya Pembuatan Aplikasi Mobile: Panduan Lengkap",
   },
   {
-    slug: "jasa-pembuatan-aplikasi-android-bandung",
+    slug: "jasa-pembuatan-aplikasi-android",
     title: "Jasa Pembuatan Aplikasi Android: Panduan Memilih Vendor",
   },
   {
@@ -686,7 +686,7 @@ export default function JasaPembuatanAplikasiPage() {
           </div>
         </section>
 
-        {/* Area + Bandung differentiation */}
+        {/* Area */}
         <section className="mb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200">
@@ -694,17 +694,10 @@ export default function JasaPembuatanAplikasiPage() {
                 Melayani Pembuatan Aplikasi di Seluruh Indonesia
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Kami berbasis di Bandung dan mengerjakan project aplikasi
-                untuk klien di seluruh Indonesia secara remote — koordinasi
-                via WhatsApp, meeting online, dan tools project management.
-                Untuk kebutuhan lokal, lihat halaman{" "}
-                <Link
-                  href="/layanan/jasa-pembuatan-aplikasi-bandung"
-                  className="text-primary hover:underline"
-                >
-                  jasa pembuatan aplikasi Bandung
-                </Link>
-                . Sedangkan untuk kebutuhan website bisnis, tersedia layanan{" "}
+                Kami mengerjakan project aplikasi untuk klien di seluruh
+                Indonesia secara remote — koordinasi via WhatsApp, meeting
+                online, dan tools project management dengan update progres
+                berkala. Untuk kebutuhan website bisnis, tersedia layanan{" "}
                 <Link
                   href="/jasa-pembuatan-website"
                   className="text-primary hover:underline"

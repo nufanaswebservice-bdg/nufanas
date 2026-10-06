@@ -102,12 +102,10 @@ export function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-2 block">
-            Harga Transparan
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="eyebrow mb-4">Harga Transparan</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Paket Harga{" "}
-            <span className="gradient-text">Jasa Website Bandung</span>
+            <span className="gradient-text">Jasa Pembuatan Website</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Harga terjangkau dengan kualitas premium. Semua paket sudah termasuk
@@ -123,12 +121,12 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
+              className={`relative p-6 card transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "bg-white border-primary shadow-lg scale-[1.02]"
+                  ? "border-primary shadow-lg scale-[1.02]"
                   : plan.promo
-                  ? "bg-gradient-to-br from-orange-50 to-red-50 border-orange-300 shadow-md"
-                  : "bg-white border-slate-200 hover:border-primary/30"
+                  ? "bg-gradient-to-br from-orange-50 to-red-50 !border-orange-300 shadow-md"
+                  : "card-hover"
               }`}
             >
               {plan.popular && (

@@ -5,9 +5,9 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 import { PortfolioGrid } from "@/components/portfolio/portfolio-grid";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Hasil Karya Website & Aplikasi Terbaik",
+  title: "Portfolio — Hasil Karya Website & Aplikasi Terbaik",
   description:
-    "Lihat portfolio website, aplikasi mobile, web application, dan enterprise software yang telah kami buat untuk bisnis di Bandung dan Indonesia.",
+    "Lihat portfolio website, aplikasi mobile, web application, dan enterprise software yang telah kami buat untuk bisnis di seluruh Indonesia.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/portfolio`,
   },
@@ -35,7 +35,7 @@ export default function PortfolioPage() {
             </h1>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
               Project website, aplikasi mobile, dan enterprise software yang
-              telah kami selesaikan untuk bisnis di Bandung dan seluruh Indonesia.
+              telah kami selesaikan untuk bisnis di seluruh Indonesia.
               Klik untuk melihat preview.
             </p>
           </div>

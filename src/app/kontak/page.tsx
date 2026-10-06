@@ -3,13 +3,12 @@ import { SITE_CONFIG, NAP } from "@/lib/constants";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { ContactForm } from "@/components/forms/contact-form";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
-import Link from "next/link";
+import { MapPin, Mail, Clock, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kontak - Konsultasi Gratis Jasa Website Bandung",
+  title: "Kontak — Konsultasi Gratis Jasa Pembuatan Website & Aplikasi",
   description:
-    "Hubungi Nufanas untuk konsultasi gratis jasa pembuatan website di Bandung. Respon cepat via WhatsApp. Kantor: Jl. Cihampelas, Bandung.",
+    "Hubungi Nufanas untuk konsultasi gratis jasa pembuatan website dan aplikasi custom. Melayani seluruh Indonesia, respon cepat via WhatsApp.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/kontak`,
   },

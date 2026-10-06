@@ -7,9 +7,9 @@ import { FAQSection } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta";
 
 export const metadata: Metadata = {
-  title: "Harga Jasa Pembuatan Website Bandung - Paket Terjangkau",
+  title: "Harga Jasa Pembuatan Website & Aplikasi — Paket Transparan",
   description:
-    "Harga jasa pembuatan website di Bandung mulai Rp 1.500.000. Paket lengkap termasuk domain, hosting, SSL, dan SEO. Transparan tanpa biaya tersembunyi.",
+    "Harga jasa pembuatan website mulai Rp 1.500.000 dan aplikasi mulai Rp 15.000.000. Termasuk domain, hosting, SSL, dan SEO. Melayani seluruh Indonesia.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/harga`,
   },

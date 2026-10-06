@@ -15,64 +15,63 @@ const reasons = [
     icon: <Zap size={24} />,
     title: "Performa Cepat",
     description:
-      "Website dengan skor Lighthouse 100 dan Core Web Vitals hijau. Loading di bawah 1 detik.",
+      "Website dan aplikasi dengan skor Lighthouse tinggi dan Core Web Vitals hijau — pengalaman pengguna yang mulus.",
   },
   {
     icon: <Shield size={24} />,
     title: "Keamanan Terjamin",
     description:
-      "SSL, firewall, dan update keamanan rutin. Data bisnis Anda aman bersama kami.",
+      "SSL, proteksi server, dan update keamanan rutin. Data bisnis dan pelanggan Anda aman bersama kami.",
   },
   {
     icon: <TrendingUp size={24} />,
-    title: "SEO Terintegrasi",
+    title: "SEO & GEO Terintegrasi",
     description:
-      "Struktur SEO dari awal. Otomatis siap ranking di Google dan AI Search.",
+      "Struktur SEO teknis sejak development — siap ranking di Google dan terbaca oleh AI Search seperti ChatGPT & Gemini.",
   },
   {
     icon: <Headphones size={24} />,
-    title: "Support 24/7",
+    title: "Support Responsif",
     description:
-      "Tim support yang responsif via WhatsApp. Masalah selesai dalam hitungan jam.",
+      "Tim support yang sigap via WhatsApp di jam kerja. Konsultasi dan koordinasi project bisa 100% remote.",
   },
   {
     icon: <Rocket size={24} />,
     title: "Teknologi Modern",
     description:
-      "Next.js, React, TypeScript, dan TailwindCSS. Teknologi terbaru untuk hasil terbaik.",
+      "Next.js, React, Flutter, Node.js, dan PostgreSQL. Stack modern yang cepat, aman, dan mudah dikembangkan.",
   },
   {
     icon: <Award size={24} />,
     title: "Berpengalaman",
     description:
-      "200+ project selesai untuk berbagai industri di Bandung dan Jawa Barat.",
+      "300+ project untuk UMKM, startup, dan enterprise di berbagai kota di Indonesia.",
   },
 ];
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-20 sm:py-24 bg-slate-50/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-sm font-medium text-primary mb-2 block">
-            Mengapa Nufanas
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Dipercaya untuk Website yang{" "}
-            <span className="gradient-text">Serius</span>
+          <span className="eyebrow mb-4">Mengapa Nufanas</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+            Partner Digital yang{" "}
+            <span className="gradient-text">Bisa Diandalkan</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Desain rapi, performa kencang, dan struktur SEO yang terukur untuk
-            bisnis di Bandung, Jawa Barat, dan seluruh Indonesia.
+            bisnis di seluruh Indonesia — dikerjakan tim in-house dengan proses
+            yang transparan.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
@@ -80,7 +79,7 @@ export function WhyChooseUsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="group p-7 card card-hover"
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all">
                 {reason.icon}

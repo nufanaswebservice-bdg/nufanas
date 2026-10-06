@@ -7,9 +7,9 @@ import { NAP } from "@/lib/constants";
 
 export function CTASection() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-20 sm:py-24 relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 gradient-primary opacity-90" />
+        <div className="absolute inset-0 gradient-primary opacity-95" />
         <div className="absolute inset-0 noise" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-[100px]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-[80px]" />
@@ -21,12 +21,13 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Siap Membangun Website Impian Anda?
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 text-balance">
+            Siap Membangun Website atau Aplikasi untuk Bisnis Anda?
           </h2>
           <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
-            Konsultasi gratis tanpa commitment. Tim kami siap membantu Anda
-            merencanakan website terbaik untuk bisnis di Bandung dan sekitarnya.
+            Konsultasi gratis tanpa commitment. Tim kami siap membantu bisnis di
+            seluruh Indonesia — mulai dari website sederhana hingga custom
+            software enterprise.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

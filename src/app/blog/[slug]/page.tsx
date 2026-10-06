@@ -65,7 +65,7 @@ function generateContent(article: NonNullable<ReturnType<typeof getArticle>>) {
     faqs: [
       { question: `Berapa biaya ${keyword}?`, answer: `Biaya ${keyword} di Nufanas mulai dari Rp 800.000 untuk paket dasar hingga puluhan juta untuk project enterprise. Hubungi kami untuk konsultasi gratis dan estimasi akurat sesuai kebutuhan Anda.` },
       { question: `Berapa lama proses ${keyword}?`, answer: `Proses ${keyword} rata-rata memakan waktu 2-12 minggu tergantung kompleksitas. Kami memberikan timeline yang jelas di awal project dan update progress secara berkala.` },
-      { question: `Apakah Nufanas melayani di luar Bandung?`, answer: `Ya! Meskipun kantor kami di Bandung, kami melayani client dari seluruh Indonesia. Komunikasi bisa dilakukan secara online via WhatsApp, Zoom, atau Google Meet.` },
+      { question: `Apakah Nufanas melayani di seluruh Indonesia?`, answer: `Ya! Nufanas melayani client dari seluruh Indonesia. Komunikasi dan koordinasi project bisa 100% online via WhatsApp, Zoom, atau Google Meet.` },
       { question: `Apa garansi yang diberikan?`, answer: `Semua project Nufanas memiliki garansi maintenance minimal 30 hari. Paket Professional dan Enterprise mendapatkan garansi hingga 12 bulan. Kami juga menyediakan paket maintenance bulanan.` },
     ],
     keyTakeaways: [

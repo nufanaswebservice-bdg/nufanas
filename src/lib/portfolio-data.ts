@@ -110,25 +110,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     result: "Membantu 1000+ klien konseling",
   },
   {
-    id: "hotel-booking",
-    title: "Hotel Booking Platform",
-    category: "Website Hotel",
-    description:
-      "Website hotel premium dengan booking system real-time, room gallery, virtual tour, dan integrasi channel manager.",
-    tech: ["Next.js", "Supabase", "TailwindCSS", "Stripe"],
-    features: [
-      "Real-time room availability",
-      "Online booking & payment",
-      "Room gallery & virtual tour",
-      "Multi-language (ID/EN)",
-      "Review & rating system",
-      "Channel manager integration",
-    ],
-    previewUrl: "https://hotel-booking-demo.vercel.app",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-    result: "Booking langsung naik 200%",
-  },
-  {
     id: "school-portal",
     title: "QueenMassage - Pijat Panggilan Bandung",
     category: "Company Profile",
@@ -185,63 +166,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     image: "/images/pena.png",
     result: "Portal media aktif & SEO-ready",
   },
-  {
-    id: "landing-page-startup",
-    title: "Startup Landing Page",
-    category: "Landing Page",
-    description:
-      "Landing page high-converting untuk startup dan SaaS product. Animasi premium, social proof, dan CTA yang optimal.",
-    tech: ["Next.js", "Framer Motion", "TailwindCSS"],
-    features: [
-      "Animated hero section",
-      "Feature showcase",
-      "Pricing table",
-      "Testimonials carousel",
-      "FAQ accordion",
-      "Newsletter signup",
-    ],
-    previewUrl: "https://startup-landing-demo.vercel.app",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    result: "Conversion rate 12%",
-  },
-  {
-    id: "crm-dashboard",
-    title: "CRM Dashboard",
-    category: "Enterprise",
-    description:
-      "Customer Relationship Management system dengan pipeline management, contact database, email automation, dan sales analytics.",
-    tech: ["Next.js", "NestJS", "PostgreSQL", "Redis", "SendGrid"],
-    features: [
-      "Sales pipeline (Kanban)",
-      "Contact management",
-      "Email automation",
-      "Task & calendar",
-      "Sales forecasting",
-      "Team collaboration",
-    ],
-    previewUrl: "https://crm-dashboard-demo.vercel.app",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-    result: "Close rate naik 35%",
-  },
-  {
-    id: "property-listing",
-    title: "Property Listing Platform",
-    category: "Website Properti",
-    description:
-      "Platform listing properti dengan peta interaktif, filter advanced, virtual tour 360°, dan kalkulasi KPR. Responsive design.",
-    tech: ["Next.js", "TailwindCSS", "Mapbox", "Supabase"],
-    features: [
-      "Interactive map search",
-      "Advanced property filters",
-      "Virtual tour 360°",
-      "KPR calculator",
-      "Agent profile",
-      "Saved searches & alerts",
-    ],
-    previewUrl: "https://property-listing-demo.vercel.app",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-    result: "Lead properti naik 180%",
-  },
 ];
 
 export const PORTFOLIO_CATEGORIES = [
@@ -249,10 +173,4 @@ export const PORTFOLIO_CATEGORIES = [
   "Company Profile",
   "E-Commerce",
   "Web Application",
-  "Mobile App",
-  "Enterprise",
-  "Marketplace",
-  "Landing Page",
-  "Website Hotel",
-  "Website Properti",
 ] as const;

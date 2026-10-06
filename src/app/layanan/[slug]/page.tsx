@@ -1,7 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ALL_SERVICES, SEO_SERVICE, SITE_CONFIG, ENTITIES, TECHNOLOGIES } from "@/lib/constants";
+import {
+  ALL_SERVICES,
+  SEO_SERVICE,
+  SITE_CONFIG,
+  ENTITIES,
+} from "@/lib/constants";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   generateServiceSchema,
@@ -31,13 +36,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
 
   return {
-    title: `${service.title} | Terpercaya & Berpengalaman`,
+    title: `${service.title} | Nufanas`,
     description: service.description,
     alternates: {
       canonical: `${SITE_CONFIG.url}/layanan/${slug}`,
     },
     openGraph: {
-      title: `${service.title} | Nufanas Digital Agency & Software House`,
+      title: `${service.title} | Nufanas`,
       description: service.description,
       url: `${SITE_CONFIG.url}/layanan/${slug}`,
       type: "website",
@@ -53,13 +58,13 @@ export default async function ServicePage({ params }: Props) {
     notFound();
   }
 
-  const isAppService = slug.includes("aplikasi") || slug.includes("erp") || slug.includes("crm") || slug.includes("hris") || slug.includes("pos") || slug.includes("saas") || slug.includes("marketplace") || slug.includes("dashboard") || slug.includes("sistem-informasi") || slug.includes("custom-software") || slug.includes("web-application");
+  const isAppService =
+    service.category !== "website-development" && service.category !== "seo";
 
-  const appCategories = ["mobile-app-development", "web-application", "custom-software", "enterprise-software"];
   const pillarLink =
     service.category === "website-development"
       ? { href: "/jasa-pembuatan-website", label: "jasa pembuatan website" }
-      : appCategories.includes(service.category)
+      : isAppService
         ? { href: "/jasa-pembuatan-aplikasi", label: "jasa pembuatan aplikasi" }
         : null;
 
@@ -85,8 +90,8 @@ export default async function ServicePage({ params }: Props) {
       answer: `Tentu! Kami menyediakan konsultasi gratis tanpa commitment. Ceritakan kebutuhan Anda dan tim kami akan memberikan rekomendasi terbaik beserta estimasi biaya dan timeline.`,
     },
     {
-      question: `Area mana saja yang dilayani?`,
-      answer: `Kami melayani client di seluruh Bandung, Cimahi, Jawa Barat, dan seluruh Indonesia. Konsultasi bisa dilakukan tatap muka atau remote via WhatsApp dan video call.`,
+      question: `Apakah Nufanas melayani di kota saya?`,
+      answer: `Ya, kami melayani client di seluruh Indonesia — ${ENTITIES.coverage}. Konsultasi dan koordinasi project bisa 100% remote via WhatsApp, Zoom, atau Google Meet.`,
     },
   ];
 
@@ -110,7 +115,7 @@ export default async function ServicePage({ params }: Props) {
       />
       <JsonLd data={generateFAQSchema(faqs)} />
 
-      <article className="pt-32 pb-24">
+      <article className="pt-28 sm:pt-32 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -125,7 +130,7 @@ export default async function ServicePage({ params }: Props) {
 
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900 text-balance">
               {service.title}
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">
@@ -154,7 +159,7 @@ export default async function ServicePage({ params }: Props) {
                 href={`https://wa.me/6285724623601?text=${encodeURIComponent(`Halo Nufanas, saya tertarik dengan ${service.title}. Bisa konsultasi?`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-green-500 text-green-600 font-medium hover:bg-green-50:bg-green-900/20 transition-all"
+                className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-green-500 text-green-600 font-medium hover:bg-green-50 transition-all"
               >
                 WhatsApp
               </a>
@@ -162,15 +167,15 @@ export default async function ServicePage({ params }: Props) {
           </header>
 
           {/* Key Takeaways */}
-          <section className="mb-12 p-6 rounded-2xl bg-primary/5 border border-primary/20">
-            <h2 className="text-lg font-bold mb-3 text-slate-900">📋 Ringkasan Layanan</h2>
+          <section className="mb-12 p-6 rounded-2xl bg-primary-soft border border-primary/15">
+            <h2 className="text-lg font-bold mb-3 text-slate-900">Ringkasan Layanan</h2>
             <ul className="space-y-2 text-sm text-slate-700">
-              <li>✅ {isAppService ? "Aplikasi native & cross-platform berkualitas tinggi" : "Desain premium, responsive, dan mobile-first"}</li>
-              <li>✅ {isAppService ? "UI/UX design khusus sesuai brand Anda" : "SEO on-page terintegrasi dari awal"}</li>
-              <li>✅ {isAppService ? "Backend scalable & secure" : "Performa cepat dengan skor Lighthouse tinggi"}</li>
-              <li>✅ {isAppService ? "Testing menyeluruh sebelum launch" : "Support teknis setelah website launch"}</li>
-              <li>✅ Melayani area Bandung, Cimahi, Jawa Barat & seluruh Indonesia</li>
-              <li>✅ Garansi maintenance & support pasca-launch</li>
+              <li>✓ {isAppService ? "Aplikasi native & cross-platform berkualitas tinggi" : "Desain premium, responsive, dan mobile-first"}</li>
+              <li>✓ {isAppService ? "UI/UX design khusus sesuai brand Anda" : "SEO on-page terintegrasi dari awal"}</li>
+              <li>✓ {isAppService ? "Backend scalable & secure" : "Performa cepat dengan skor Lighthouse tinggi"}</li>
+              <li>✓ {isAppService ? "Testing menyeluruh sebelum launch" : "Support teknis setelah website launch"}</li>
+              <li>✓ Melayani bisnis di seluruh Indonesia — full remote-friendly</li>
+              <li>✓ Garansi maintenance & support pasca-launch</li>
             </ul>
           </section>
 
@@ -180,7 +185,7 @@ export default async function ServicePage({ params }: Props) {
             <p>
               Di era digital saat ini, memiliki {isAppService ? "aplikasi" : "website"} yang profesional bukan lagi
               pilihan, melainkan keharusan. {service.title} dari Nufanas dirancang
-              khusus untuk membantu bisnis di Bandung dan Jawa Barat {isAppService ? "mengotomasi operasional dan meningkatkan produktivitas" : "tampil profesional di internet dan mendapatkan lebih banyak pelanggan"}.
+              khusus untuk membantu bisnis di seluruh Indonesia {isAppService ? "mengotomasi operasional dan meningkatkan produktivitas" : "tampil profesional di internet dan mendapatkan lebih banyak pelanggan"}.
             </p>
             <p>
               Tim kami yang berpengalaman menggunakan teknologi terkini untuk membangun {isAppService ? "software" : "website"} yang tidak
@@ -209,7 +214,7 @@ export default async function ServicePage({ params }: Props) {
                   <li>Integrasi Google Analytics dan Search Console</li>
                   <li>Schema markup untuk rich snippets di Google</li>
                   <li>SSL dan proteksi keamanan</li>
-                  <li>Loading time di bawah 2 detik</li>
+                  <li>Loading time yang cepat</li>
                   <li>Support teknis pasca-launch</li>
                 </>
               )}
@@ -252,8 +257,8 @@ export default async function ServicePage({ params }: Props) {
             <h2>Area Layanan</h2>
             <p>
               Kami melayani {service.shortTitle.toLowerCase()} untuk bisnis di
-              seluruh wilayah: {ENTITIES.areas.join(", ")}. Konsultasi bisa dilakukan
-              tatap muka di kantor kami atau remote via WhatsApp dan video call.
+              seluruh Indonesia: {ENTITIES.coverage}. Konsultasi bisa dilakukan
+              remote via WhatsApp dan video call, atau tatap muka di kantor kami.
             </p>
           </section>
 
@@ -302,7 +307,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={related.slug}
                     href={`/layanan/${related.slug}`}
-                    className="p-5 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all"
+                    className="p-5 card card-hover"
                   >
                     <h3 className="font-semibold mb-1 text-sm text-slate-900">{related.title}</h3>
                     <p className="text-xs text-slate-500 line-clamp-2">{related.description}</p>
@@ -320,7 +325,7 @@ export default async function ServicePage({ params }: Props) {
                 <Link
                   key={other.slug}
                   href={`/layanan/${other.slug}`}
-                  className="p-5 rounded-xl bg-white border border-slate-200 hover:border-primary/30 transition-all"
+                  className="p-5 card card-hover"
                 >
                   <h3 className="font-semibold mb-1 text-sm text-slate-900">{other.title}</h3>
                   <p className="text-xs text-slate-500 line-clamp-2">{other.description}</p>

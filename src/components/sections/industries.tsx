@@ -20,42 +20,40 @@ import {
 } from "lucide-react";
 
 const industries = [
-  { icon: <Building size={20} />, name: "Company Profile", slug: "website-company-profile-bandung" },
-  { icon: <ShoppingBag size={20} />, name: "E-Commerce", slug: "website-toko-online-bandung" },
-  { icon: <Heart size={20} />, name: "Klinik & RS", slug: "jasa-aplikasi-klinik-bandung" },
-  { icon: <GraduationCap size={20} />, name: "Sekolah", slug: "jasa-aplikasi-sekolah-bandung" },
-  { icon: <Coffee size={20} />, name: "Cafe & Restoran", slug: "jasa-aplikasi-cafe-bandung" },
-  { icon: <Hotel size={20} />, name: "Hotel", slug: "jasa-aplikasi-hotel-bandung" },
-  { icon: <Car size={20} />, name: "Rental Mobil", slug: "jasa-aplikasi-rental-mobil-bandung" },
-  { icon: <Plane size={20} />, name: "Travel & Tour", slug: "jasa-aplikasi-travel-bandung" },
-  { icon: <Hammer size={20} />, name: "Kontraktor", slug: "website-kontraktor-bandung" },
-  { icon: <Home size={20} />, name: "Properti", slug: "jasa-aplikasi-properti-bandung" },
-  { icon: <Factory size={20} />, name: "Manufaktur", slug: "website-industri-bandung" },
-  { icon: <Truck size={20} />, name: "Logistik", slug: "jasa-custom-software-bandung" },
-  { icon: <CreditCard size={20} />, name: "POS & Kasir", slug: "jasa-pos-bandung" },
-  { icon: <BarChart3 size={20} />, name: "ERP & CRM", slug: "jasa-erp-bandung" },
+  { icon: <Building size={20} />, name: "Company Profile", href: "/layanan/website-company-profile" },
+  { icon: <ShoppingBag size={20} />, name: "E-Commerce", href: "/layanan/website-ecommerce" },
+  { icon: <Heart size={20} />, name: "Klinik & RS", href: "/layanan/website-booking" },
+  { icon: <GraduationCap size={20} />, name: "Sekolah", href: "/layanan/website-custom" },
+  { icon: <Coffee size={20} />, name: "Cafe & Restoran", href: "/layanan/aplikasi-bisnis" },
+  { icon: <Hotel size={20} />, name: "Hotel", href: "/layanan/website-booking" },
+  { icon: <Car size={20} />, name: "Rental Mobil", href: "/layanan/website-booking" },
+  { icon: <Plane size={20} />, name: "Travel & Tour", href: "/layanan/website-booking" },
+  { icon: <Hammer size={20} />, name: "Kontraktor", href: "/layanan/website-company-profile" },
+  { icon: <Home size={20} />, name: "Properti", href: "/layanan/website-custom" },
+  { icon: <Factory size={20} />, name: "Manufaktur", href: "/layanan/sistem-informasi" },
+  { icon: <Truck size={20} />, name: "Logistik", href: "/layanan/aplikasi-bisnis" },
+  { icon: <CreditCard size={20} />, name: "POS & Kasir", href: "/layanan/aplikasi-bisnis" },
+  { icon: <BarChart3 size={20} />, name: "ERP & CRM", href: "/layanan/sistem-informasi" },
 ];
 
 export function IndustriesSection() {
   return (
-    <section className="py-24">
+    <section className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-sm font-medium text-primary mb-2 block">
-            Industri & Solusi
-          </span>
+          <span className="eyebrow mb-4">Industri & Solusi</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Website & Aplikasi untuk Berbagai{" "}
             <span className="gradient-text">Industri</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Kami berpengalaman membangun website, mobile app, dan enterprise
-            software untuk berbagai industri di Bandung dan seluruh Indonesia.
+            software untuk berbagai industri di seluruh Indonesia.
           </p>
         </motion.div>
 
@@ -69,8 +67,8 @@ export function IndustriesSection() {
               transition={{ delay: index * 0.03 }}
             >
               <Link
-                href={`/layanan/${industry.slug}`}
-                className="group flex flex-col items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-md transition-all"
+                href={industry.href}
+                className="group flex flex-col items-center gap-3 p-4 card card-hover"
               >
                 <div className="text-slate-500 group-hover:text-primary transition-colors">
                   {industry.icon}

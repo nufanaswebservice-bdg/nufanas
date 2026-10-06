@@ -1,28 +1,31 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { SITE_CONFIG, NAP, NAVIGATION, SERVICE_CATEGORIES } from "@/lib/constants";
+import { SITE_CONFIG, NAP, NAVIGATION } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#0b1220] text-slate-300">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img
+              <Image
                 src="/images/logo-nufanas.png"
-                alt="Nufanas Logo"
-                className="h-8 w-auto"
+                alt="Nufanas — Jasa Pembuatan Website & Aplikasi"
+                width={140}
+                height={32}
+                className="h-8 w-auto brightness-0 invert"
               />
             </Link>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              Digital agency dan software house profesional di Bandung. Jasa
-              pembuatan website, aplikasi mobile, web application, enterprise
-              software, AI automation, SEO, dan digital marketing.
+              Jasa pembuatan website dan aplikasi custom untuk bisnis di seluruh
+              Indonesia — website, aplikasi mobile, web application, dan custom
+              software dengan desain premium dan fondasi SEO yang kuat.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
@@ -55,22 +58,46 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Layanan</h3>
             <ul className="space-y-2.5">
-              {SERVICE_CATEGORIES.map((cat) => (
-                <li key={cat.slug}>
-                  <Link
-                    href={
-                      cat.slug === "website-development"
-                        ? "/jasa-pembuatan-website"
-                        : cat.slug === "mobile-app-development"
-                          ? "/jasa-pembuatan-aplikasi"
-                          : "/layanan"
-                    }
-                    className="text-sm text-slate-400 hover:text-primary transition-colors"
-                  >
-                    {cat.shortTitle}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/jasa-pembuatan-website" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Jasa Pembuatan Website
+                </Link>
+              </li>
+              <li>
+                <Link href="/jasa-pembuatan-aplikasi" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Jasa Pembuatan Aplikasi
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/website-ecommerce" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Website E-Commerce
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/web-application" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Web Application
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/aplikasi-mobile" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Aplikasi Mobile
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/custom-software" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Custom Software
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/sistem-informasi" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Sistem Informasi
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan/jasa-seo" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                  Jasa SEO
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -88,6 +115,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-slate-400 hover:text-primary transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/privacy-policy"
@@ -110,21 +145,24 @@ export function Footer() {
           {/* Areas Served */}
           <div>
             <h3 className="font-semibold text-white mb-4">Area Layanan</h3>
+            <p className="text-xs text-slate-500 mb-3">
+              Melayani seluruh Indonesia — konsultasi & pengerjaan 100% bisa
+              remote.
+            </p>
             <div className="flex flex-wrap gap-2">
               {[
                 "Seluruh Indonesia",
-                "Bandung",
                 "Jakarta",
                 "Surabaya",
-                "Yogyakarta",
-                "Semarang",
+                "Bandung",
                 "Medan",
+                "Semarang",
+                "Yogyakarta",
                 "Makassar",
                 "Bali",
-                "Malang",
-                "Bogor",
-                "Bekasi",
-                "Tangerang",
+                "Palembang",
+                "Balikpapan",
+                "Batam",
               ].map((area) => (
                 <span
                   key={area}
@@ -142,8 +180,8 @@ export function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            © {currentYear} {SITE_CONFIG.name}. All rights reserved. Digital
-            Agency & Software House Bandung, Jawa Barat.
+            © {currentYear} {SITE_CONFIG.name}. All rights reserved. Jasa
+            Pembuatan Website & Aplikasi untuk Bisnis Indonesia.
           </p>
           <div className="flex items-center gap-4">
             {Object.entries(NAP.socialMedia).map(([platform, url]) => (

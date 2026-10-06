@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAP } from "@/lib/constants";
@@ -59,10 +60,13 @@ export function PromoPopup() {
             </button>
 
             {/* Promo Image */}
-            <img
+            <Image
               src="/images/promo1.png"
-              alt="Promo Pembuatan Website Rp 800.000"
+              alt="Promo pembuatan website Nufanas seharga Rp 800.000"
+              width={448}
+              height={280}
               className="w-full h-auto"
+              priority={false}
             />
 
             {/* CTA */}
