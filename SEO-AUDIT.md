@@ -215,3 +215,49 @@ Tetap di `/layanan/*` (topik berbeda, tidak overlap): `/layanan/jasa-seo`,
 - Sitemap: 86 URL, 0 referensi kota, semua `/jasa-*` masuk.
 - Routes: semua `/jasa-*` 200; 10 legacy `/layanan/<slug>` → 308 ke `/jasa-*`.
 - `/robots.txt`, `/sitemap.xml` 200 di standalone (Docker menyalin `public/` postbuild ke image runner).
+
+---
+
+# PHASE 3 — IMPLEMENTED
+
+## P3.1 — Portfolio architecture
+
+- `/portfolio` grid: 7 filter kategori (`Website, Web Application, Mobile Application,
+  E-Commerce, Custom Software, AI, Business System`) dengan jumlah project per kategori
+  dan empty state honest (tidak ada project palsu) + CTA WhatsApp.
+- Item bisa multi-kategori (`categories[]`), misal NuViral = Web Application + AI.
+
+## P3.2 — Case study template `/portfolio/[slug]`
+
+Section: breadcrumb → header (kategori, hasil, client type, "Built by Nufanas") →
+browser mockup (screenshot asli) → CTA → Kebutuhan Bisnis → Tujuan → Tantangan Teknis →
+Solusi + Fitur → Preview Responsif (browser + phone mockup) → Video (conditional) →
+How We Built This (arsitektur + stack) → Proses Development → Hasil (hanya jika ada
+data nyata) → Related Services → Project Terkait → CTA.
+
+Konten hanya dari data nyata: fitur, stack, dan hasil yang sudah ada — tanpa
+statistik/testimonial/timeline yang dikarang. Field opsional (`video`, `result`)
+hanya dirender bila datanya ada.
+
+## P3.3 — Slug & image renames
+
+- Slug deskriptif sesuai project nyata: `nuviral-ai-studio`, `kaosdn99-ecommerce`,
+  `bimbel-kedinasan-online`, `lcc-surabaya`, `teman-sejiwa`, `queenmassage`,
+  `portal-agatha`, `pena-sakti`. 8 slug lama → 308 ke slug baru.
+- Image rename deskriptif: `nufanas-project-*.png`, `nufanas-logo.png`,
+  `nufanas-promo-banner.png`. Alt text deskriptif per project (`imageAlt`).
+- Redirect chain diperbaiki: legacy `*-bandung` slugs kini langsung ke `/jasa-*`
+  (bukan lewat `/layanan/*` yang ikut redirect).
+
+## P3.4 — Visual & video
+
+- `BrowserMockup` + `PhoneMockup` membungkus screenshot asli (bukan stock).
+- `VideoShowcase`: controls, `preload="none"`, poster, captions — reusable;
+  `VideoObject` schema hanya dirender bila `item.video` ada.
+- Schema `WebPage` + `CreativeWork` + `ImageObject` per case study.
+
+## P3.5 — Verification
+
+- `tsc` clean, `eslint` clean, build OK — 8 case study SSG.
+- Local: semua `/portfolio/<new-slug>` 200; 8 old slugs → 308; legacy bandung
+  → direct `/jasa-*` (no chain). Sitemap: 86 URL, hanya slug baru.

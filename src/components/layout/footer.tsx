@@ -15,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
-                src="/images/logo-nufanas.png"
+                src="/images/nufanas-logo.png"
                 alt="Nufanas — Jasa Pembuatan Website & Aplikasi"
                 width={140}
                 height={32}

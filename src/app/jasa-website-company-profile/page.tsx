@@ -155,9 +155,9 @@ const content: ServicePageContent = {
     { href: "/layanan/jasa-seo", label: "Jasa SEO" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/company-profile-premium", label: "Bimbel Kedinasan" },
-    { href: "/portfolio/travel-marketplace", label: "Pena Sakti" },
-    { href: "/portfolio/restaurant-app", label: "LCC Surabaya" },
+    { href: "/portfolio/bimbel-kedinasan-online", label: "Bimbel Kedinasan" },
+    { href: "/portfolio/pena-sakti", label: "Pena Sakti" },
+    { href: "/portfolio/lcc-surabaya", label: "LCC Surabaya" },
   ],
   relatedArticles: [
     {

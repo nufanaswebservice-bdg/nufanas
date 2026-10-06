@@ -61,7 +61,7 @@ export function PromoPopup() {
 
             {/* Promo Image */}
             <Image
-              src="/images/promo1.png"
+              src="/images/nufanas-promo-banner.png"
               alt="Promo pembuatan website Nufanas seharga Rp 800.000"
               width={448}
               height={280}

@@ -162,7 +162,7 @@ const content: ServicePageContent = {
     { href: "/layanan/jasa-seo", label: "Jasa SEO" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/ecommerce-modern", label: "KaosDN99 E-Commerce" },
+    { href: "/portfolio/kaosdn99-ecommerce", label: "KaosDN99 E-Commerce" },
   ],
   relatedArticles: [
     {

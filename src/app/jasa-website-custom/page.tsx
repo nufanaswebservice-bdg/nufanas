@@ -155,8 +155,8 @@ const content: ServicePageContent = {
     { href: "/layanan/website-booking", label: "Website Booking" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/saas-dashboard", label: "NuViral AI Studio" },
-    { href: "/portfolio/clinic-management", label: "Teman Sejiwa" },
+    { href: "/portfolio/nuviral-ai-studio", label: "NuViral AI Studio" },
+    { href: "/portfolio/teman-sejiwa", label: "Teman Sejiwa" },
   ],
   relatedArticles: [
     {

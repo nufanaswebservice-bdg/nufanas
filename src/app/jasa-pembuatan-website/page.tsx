@@ -142,12 +142,12 @@ const otherWebsiteTypes = [
 ];
 
 const portfolioIds = [
-  "ecommerce-modern",
-  "company-profile-premium",
-  "restaurant-app",
-  "travel-marketplace",
-  "school-portal",
-  "clinic-management",
+  "kaosdn99-ecommerce",
+  "bimbel-kedinasan-online",
+  "lcc-surabaya",
+  "pena-sakti",
+  "queenmassage",
+  "teman-sejiwa",
 ];
 
 const relatedArticles = [
@@ -720,7 +720,7 @@ export default function JasaPembuatanWebsitePage() {
                   className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all"
                 >
                   <span className="text-xs font-medium text-primary">
-                    {item.category}
+                    {item.categories[0]}
                   </span>
                   <h3 className="font-semibold mt-1 mb-2 text-slate-900 group-hover:text-primary transition-colors">
                     {item.title}

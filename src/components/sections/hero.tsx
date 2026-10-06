@@ -111,7 +111,7 @@ export function HeroSection() {
               </div>
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/images/opensas1.png"
+                  src="/images/nufanas-project-nuviral-ai-studio.png"
                   alt="Screenshot NuViral AI Creative Studio — platform web application yang dibangun Nufanas"
                   fill
                   priority

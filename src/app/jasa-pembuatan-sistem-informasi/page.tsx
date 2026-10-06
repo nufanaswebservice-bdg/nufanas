@@ -168,7 +168,7 @@ const content: ServicePageContent = {
     { href: "/layanan/aplikasi-ai", label: "Aplikasi AI" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/pos-system", label: "Portal Agatha" },
+    { href: "/portfolio/portal-agatha", label: "Portal Agatha" },
   ],
   relatedArticles: [
     {

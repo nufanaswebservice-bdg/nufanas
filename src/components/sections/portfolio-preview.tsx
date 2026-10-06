@@ -53,7 +53,7 @@ export function PortfolioPreviewSection() {
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                   <Image
                     src={item.image}
-                    alt={`Screenshot ${item.title} — ${item.category} oleh Nufanas`}
+                    alt={item.imageAlt}
                     fill
                     className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -61,7 +61,7 @@ export function PortfolioPreviewSection() {
                 </div>
                 <div className="p-5">
                   <span className="text-[11px] font-semibold text-primary uppercase tracking-wide">
-                    {item.category}
+                    {item.categories[0]}
                   </span>
                   <h3 className="font-semibold text-slate-900 mt-1 mb-2 group-hover:text-primary transition-colors line-clamp-1">
                     {item.title}

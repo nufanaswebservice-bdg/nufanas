@@ -168,9 +168,9 @@ const content: ServicePageContent = {
     { href: "/jasa-aplikasi-mobile", label: "Aplikasi Mobile" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/pos-system", label: "Portal Agatha" },
-    { href: "/portfolio/saas-dashboard", label: "NuViral AI" },
-    { href: "/portfolio/clinic-management", label: "Teman Sejiwa" },
+    { href: "/portfolio/portal-agatha", label: "Portal Agatha" },
+    { href: "/portfolio/nuviral-ai-studio", label: "NuViral AI" },
+    { href: "/portfolio/teman-sejiwa", label: "Teman Sejiwa" },
   ],
   relatedArticles: [
     {

@@ -9,7 +9,7 @@ export function generateOrganizationSchema() {
     url: SITE_CONFIG.url,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_CONFIG.url}/images/logo-nufanas.png`,
+      url: `${SITE_CONFIG.url}/images/nufanas-logo.png`,
       width: 512,
       height: 512,
     },
@@ -203,6 +203,57 @@ export function generatePillarServiceSchema(service: {
       name: "Indonesia",
     },
     serviceType: service.serviceType,
+  };
+}
+
+export function generateCaseStudySchema(project: {
+  title: string;
+  description: string;
+  slug: string;
+  image: string;
+  imageAlt: string;
+  video?: {
+    src: string;
+    poster: string;
+    title: string;
+    description: string;
+    duration?: string;
+    uploadDate?: string;
+  };
+}) {
+  const pageUrl = `${SITE_CONFIG.url}/portfolio/${project.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    url: pageUrl,
+    name: `${project.title} — Portfolio Nufanas`,
+    description: project.description,
+    isPartOf: { "@id": `${SITE_CONFIG.url}/#website` },
+    about: {
+      "@type": "CreativeWork",
+      name: project.title,
+      description: project.description,
+      url: pageUrl,
+      creator: { "@id": `${SITE_CONFIG.url}/#organization` },
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE_CONFIG.url}${project.image}`,
+      caption: project.imageAlt,
+    },
+    ...(project.video && {
+      video: {
+        "@type": "VideoObject",
+        name: project.video.title,
+        description: project.video.description,
+        thumbnailUrl: `${SITE_CONFIG.url}${project.video.poster}`,
+        contentUrl: `${SITE_CONFIG.url}${project.video.src}`,
+        uploadDate: project.video.uploadDate,
+        duration: project.video.duration,
+      },
+    }),
+    inLanguage: "id-ID",
   };
 }
 

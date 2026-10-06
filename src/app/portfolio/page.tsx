@@ -34,9 +34,10 @@ export default function PortfolioPage() {
               <span className="gradient-text">Terbaik Kami</span>
             </h1>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Project website, aplikasi mobile, dan enterprise software yang
-              telah kami selesaikan untuk bisnis di seluruh Indonesia.
-              Klik untuk melihat preview.
+              Project website, web application, e-commerce, dan custom software
+              yang telah kami bangun untuk bisnis di seluruh Indonesia. Klik
+              untuk melihat case study lengkap — tantangan, solusi, arsitektur,
+              dan teknologi di baliknya.
             </p>
           </div>
 

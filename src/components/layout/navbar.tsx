@@ -54,7 +54,7 @@ export function Navbar() {
             aria-label="Nufanas - Beranda"
           >
             <Image
-              src="/images/logo-nufanas.png"
+              src="/images/nufanas-logo.png"
               alt="Nufanas — Jasa Pembuatan Website & Aplikasi"
               width={140}
               height={36}

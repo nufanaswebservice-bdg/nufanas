@@ -143,11 +143,11 @@ const otherAppTypes = [
 ];
 
 const portfolioIds = [
-  "saas-dashboard",
-  "clinic-management",
-  "pos-system",
+  "nuviral-ai-studio",
+  "teman-sejiwa",
+  "portal-agatha",
   "crm-dashboard",
-  "ecommerce-modern",
+  "kaosdn99-ecommerce",
 ];
 
 const relatedArticles = [
@@ -574,7 +574,7 @@ export default function JasaPembuatanAplikasiPage() {
                   className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all"
                 >
                   <span className="text-xs font-medium text-primary">
-                    {item.category}
+                    {item.categories[0]}
                   </span>
                   <h3 className="font-semibold mt-1 mb-2 text-slate-900 group-hover:text-primary transition-colors">
                     {item.title}

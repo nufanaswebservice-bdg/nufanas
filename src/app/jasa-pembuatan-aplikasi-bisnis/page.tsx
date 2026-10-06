@@ -168,7 +168,7 @@ const content: ServicePageContent = {
     { href: "/layanan/website-booking", label: "Website Booking" },
   ],
   relatedPortfolio: [
-    { href: "/portfolio/pos-system", label: "Portal Agatha" },
+    { href: "/portfolio/portal-agatha", label: "Portal Agatha" },
   ],
 };
 
